@@ -1,0 +1,139 @@
+<html>
+<head>
+        <title> Home </title>
+        <link rel="stylesheet" href="stylesheet.css" type="text/css" />
+</head>
+<style>
+body{
+	background: linear-gradient(to right, #ab0935, #303031);
+}
+.searchmenu {
+	display: flex;
+	height: 30%;
+	width: 100%;
+	align-items: center;
+	justify-content:center;
+	background-image: url('cwu.jpg');
+}
+.restuarantbox {
+	display: flex;
+	height: 70%;
+}
+.restuarantboxinner{
+	display: flex;
+}
+.mostpopular{
+	flex: .34;
+	border: 2px solid black;
+	background-color: rgb(223, 205, 46);
+	padding: 7px;
+}
+.favorites{
+	flex: .34;
+	border: 2px solid black;
+	background-color: rgb(158, 32, 32);
+	padding: 7px;
+}
+.newestadditions{
+	flex: .34;
+	border: 2px solid black;
+	background-color: rgb(199, 47, 204);
+	padding: 7px;
+}
+.h2{
+	border: 2px solid black;
+	text-align: center;
+	margin-top: 10px;
+	color: white;
+	height: 10%;
+	background-color: white;
+}
+.restuarantList1{
+	padding: 2px;
+	background-color: white;
+	flex: 1;
+	height: 27%;
+	border: 3px solid black;
+	text-align: center;
+	cursor: pointer;
+}
+.restuarantList2{
+	padding: 2px;
+	background-color: rgb(49, 28, 241);
+	flex: 1;
+	height: 27%;
+	border: 3px solid black;
+	text-align: center;
+	cursor: pointer;
+}
+.restuarantList3{
+	padding: 2px;
+	background-color: rgb(12, 201, 113);
+	flex: 1;
+	height: 27%;
+	border: 3px solid black;
+	text-align: center;
+	cursor: pointer;
+}
+
+</style>
+
+
+<body>
+	<nav class="navbar">
+		<ul>
+			<li><a class="active" href="home.html">Home</a></li>
+			<li><a href=>My Account</a></li>
+			<li><a href=>Most Popular</a></li>
+			<li><a href=>Newest Additions</a></li>
+			<li><a href=>Your Favorites</a></li>
+			<li><a href=>Sign In</a></li>
+		</ul>
+	</nav>
+
+<div class="searchmenu">
+		<form role="search">
+		<label for="search">Search for stuff</label>
+		<input id="search" type="search" placeholder="Search for a restaurant...">
+		<button type="submit">Go</button>    
+</div>
+<div class="restuarantbox">
+	<div class="mostpopular">
+		<h2 style="text-align: center; margin-top: 10px;">Most Popular</h2>
+		<div class="restuarantList1">
+			Restaurant 1.
+		</div>
+		<div class="restuarantList2">
+			Restaurant 2.
+		</div>
+		<div class="restuarantList3">
+			Restaurant 3.
+		</div>
+	</div>
+	<div class="favorites">
+		<h2 style="text-align: center; margin-top: 10px;">Favorites</h2>
+		<div class="restuarantList1">
+			Restaurant 1.
+		</div>
+		<div class="restuarantList2">
+			Restaurant 2.
+		</div>
+		<div class="restuarantList3">
+			Restaurant 3.
+		</div>
+	</div>
+	<div class="newestadditions">
+		<h2 style="text-align: center; margin-top: 10px;">Newest Additions</h2>
+		<div class="restuarantList1">
+			Restaurant 1.
+		</div>
+		<div class="restuarantList2">
+			Restaurant 2.
+		</div>
+		<div class="restuarantList3">
+			Restaurant 3.
+		</div>
+	</div>
+</div>
+</body>
+</html>
