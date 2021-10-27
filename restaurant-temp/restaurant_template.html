@@ -12,8 +12,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;700&display=swap"
-          rel="stylesheet">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;700&family=Montserrat:wght@700;900&family=Overpass:wght@200;300;400&display=swap" rel="stylesheet">
     <!--icons-->
     <script src="https://kit.fontawesome.com/0d601189ad.js" crossorigin="anonymous"></script>
 
@@ -30,9 +30,9 @@
                 <!--Directs user to a restaurant-->
                 <form action="#">
                     <label for="search-bar">
-                        <input class="form-control-sm" type="text" id="search-bar" placeholder="EAT!"
-                               style="border-radius:
-                        3px;">
+                        <input style="border-width: 0;border-style: none; margin-bottom: 10px;" class="form-control-sm" type="text"
+                               id="search-bar"
+                               placeholder="EAT!">
                     </label>
                     <button type="submit"
                             style="background-color:#ab0032;color:#fff;border:none;border-radius: 3px;padding: 4px
@@ -47,11 +47,11 @@
 
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link" style="color:#c8c7c7;font-size: 20px;">LOG IN</a>
+                    <li class="nav-item ">
+                        <a href="#" class="nav-link" style="color: white; margin-right: 1em">LOG IN</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" style="color: #ab0032;font-size: 20px">SIGN UP</a>
+                        <a href="#" class="nav-link" style="color: white;">SIGN UP</a>
                     </li>
                 </ul>
             </div>
@@ -60,66 +60,82 @@
 </header>
 
 <!--RESTAURANT INFO-->
-<section class="pt-5 text-center">
+<section class="text-center">
 
     <!--RESTAURANT PICTURE-->
-    <div class="restaurant-picture">
+    <div class="rest-picture">
         <img class="img-fluid" src="ducks.webp" alt="Restaurant Photo">
     </div>
     <br>
     <div class="container">
 
-        <!--RESTAURANT NAME-->
-        <div class="d-sm-flex" id="restaurant-name" style="margin-bottom: -15px;">
-            <h1>Restaurant Name</h1>
-        </div>
+        <div class="row">
+            <div class="col-lg-8">
+                <!--RESTAURANT NAME-->
+                <div class="d-sm-flex" id="rest-name">
+                    <h1>Seng Tong Thai Cuisine</h1>
+                </div>
 
-        <!--RESTAURANT CUISINE-->
-        <div class="d-sm-flex" style="margin-bottom: -15px;">
-            <h2>Cuisine</h2>
-        </div>
+                <!--RESTAURANT CUISINE-->
+                <div class="d-sm-flex" id="cuisine">
+                    <h2 style="font-weight: 300">Thai</h2>
+                </div>
 
-        <!--RESTAURANT RATINGS-->
-        <div class="containter">
-            <div class="stars">
-                <div class="stars d-sm-flex">
-                    <label class="rate">
-                        <input type="radio" name="radio1" id="star1" value="star1">
-                        <i class="fas fa-star star one-star"></i>
-                    </label>
-                    <label class="rate">
-                        <input type="radio" name="radio1" id="star2" value="star2">
-                        <i class="fas fa-star star two-star"></i>
-                    </label>
-                    <label class="rate">
-                        <input type="radio" name="radio1" id="star3" value="star3">
-                        <i class="fas fa-star star three-star"></i>
-                    </label>
-                    <label class="rate">
-                        <input type="radio" name="radio1" id="star4" value="star4">
-                        <i class="fas fa-star star four-star"></i>
-                    </label>
-                    <label class="rate">
-                        <input type="radio" name="radio1" id="star5" value="star5">
-                        <i class="fas fa-star star five-star"></i>
-                    </label>
+                <!--RESTAURANT RATINGS-->
+                <div class="containter">
+                    <div class="stars">
+                        <div class="stars d-sm-flex">
+                            <label class="rate">
+                                <input type="radio" name="radio1" id="star1" value="star1">
+                                <i class="fas fa-star star one-star"></i>
+                            </label>
+                            <label class="rate">
+                                <input type="radio" name="radio1" id="star2" value="star2">
+                                <i class="fas fa-star star two-star"></i>
+                            </label>
+                            <label class="rate">
+                                <input type="radio" name="radio1" id="star3" value="star3">
+                                <i class="fas fa-star star three-star"></i>
+                            </label>
+                            <label class="rate">
+                                <input type="radio" name="radio1" id="star4" value="star4">
+                                <i class="fas fa-star star four-star"></i>
+                            </label>
+                            <label class="rate">
+                                <input type="radio" name="radio1" id="star5" value="star5">
+                                <i class="fas fa-star star five-star"></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!--buttons-->
+                <div class="d-sm-flex">
+                    <button class="btn btn-lg shadow-none" id="rest-review">
+                        Write a Review
+                    </button>
+                    <button class="btn btn-lg shadow-none" id="review-photo">
+                        <i class="fas fa-camera">
+                        </i>Post a Photo
+                    </button>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-4">
+                <div class="rest-info-container border rounded p-3" id="rest-info">
+                    <h3>Restaurant Information</h3>
+
+                    <!--PHONE NUMBER-->
+                    <section><span>(206) 999-9999</span> <i class="fas fa-phone-square"></i>
+                    </section>
+
+                    <!--RESTAURANT WEBSITE -->
+                    <section><span>www.website.com</span><i class="fas fa-external-link-alt"></i>
+                    </section>
                 </div>
             </div>
         </div>
-        <!--buttons-->
-        <div class="d-sm-flex">
-            <button class="btn btn-lg" style="background: #ab0032;color: white"
-                    id="rest-review">Write a
-                Review
-            </button>
-            <button class="btn btn-lg " id="review-photo"
-                    style="margin-left: 10px;border-color: black;"><i class="fas fa-camera"
-                                                                      style="margin-right: 5px; color: #ab0032;"></i>
-                Post a
-                Photo
-            </button>
-        </div>
+
     </div>
+
 
     <!--MAIN PAGE-->
     <section class="d-sm pt-5 text-center">
@@ -127,99 +143,114 @@
             <div class="row justify-content-center">
 
                 <!--REVIEW COLUMN-->
-                <div class="col-lg-7">
+                <div class="col-lg-7" id="review-col">
                     <h3>REVIEWS</h3>
                     <hr class="solid">
                     <div class="review-container">
 
-                        <div class="container" style="padding-left: 0">
-                            <div class="row">
-                                <div class="col-sm-2">
-                                    <!--USER PROFILE PHOTO-->
-                                    <img src="noface.png" alt="" style="width: 100%; border-radius: 10px">
-                                </div>
+                        <div class="d-flex flex-row-reverse" style="">
+                            <a class="btn shadow-none" href="#" role="button"
+                               style=""><i class="fas fa-ellipsis-h"></i></a>
+                        </div>
 
-                                <div class="col-sm-3">
-                                    <div class="d-flex flex-sm-row">
-                                        <div class="col-1">
-                                        <!--USER USERNAME-->
-                                        <text style="">Username</text>
+                        <div class="container" style="padding-left: 0">
+                            <div class="row" style="margin-left: 0px;padding: 5px 0 5px 0">
+                                <div class="col-sm-2" style="">
+                                    <!--USER PROFILE PHOTO-->
+                                    <img src="noface.png" alt="" style="width:5rem;
+                                    height:auto; border-radius:
+                                    10px">
+                                    <div class="container" style="padding-left: 0;padding-right: 0">
+                                        <div class="d-flex-sm-row" style="margin-top: -10px">
+                                            <div class="stars">
+                                                <div class="stars d-sm-flex">
+                                                    <label class="rate">
+                                                        <input type="radio" name="radio1" id="star1"
+                                                               value="star1">
+                                                        <i class="fas fa-star star one-star"
+                                                           style="font-size: 15px"></i>
+                                                    </label>
+                                                    <label class="rate">
+                                                        <input type="radio" name="radio1" id="star2" value="star2">
+                                                        <i class="fas fa-star star two-star"
+                                                           style="font-size: 15px"></i>
+                                                    </label>
+                                                    <label class="rate">
+                                                        <input type="radio" name="radio1" id="star3" value="star3">
+                                                        <i class="fas fa-star star three-star"
+                                                           style="font-size: 15px"></i>
+                                                    </label>
+                                                    <label class="rate">
+                                                        <input type="radio" name="radio1" id="star4" value="star4">
+                                                        <i class="fas fa-star star four-star"
+                                                           style="font-size: 15px"></i>
+                                                    </label>
+                                                    <label class="rate">
+                                                        <input type="radio" name="radio1" id="star5" value="star5">
+                                                        <i class="fas fa-star star five-star"
+                                                           style="font-size: 15px"></i>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d-sm-flex text-nowrap" id="post-date">
+                                            <!--USER REVIEW POST DATE-->
+                                            <text>MM/DD/YYYY</text>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="col-sm-2" style="">
+                                    <div class="d-flex-sm-row ">
+                                        <div class="d-flex-sm-col-1" id="username" style="text-align: left;">
+                                            <!--USER USERNAME-->
+                                            <text>Username</text>
+                                        </div>
+                                    </div>
+
                                     <div class="d-flex flex-sm-row">
-                                        <div class="d-flex-sm-col-1 align-items-center">
-                                            <!--RATINGS DATA-->
+
+                                        <!--RATINGS DATA-->
+                                        <div class="d-flex-col-1">
                                             <i class="fas fa-star"
                                                style="color: #969696;font-size: 15px;margin-right: 3px"></i>
                                         </div>
-                                        <div class="d-flex-sm-col-2">
-                                            <span class="ratings-data">50</span>
+                                        <div class="d-flex-col-2" id="ratings-data">
+                                            <text class="ratings-data" >50</text>
                                         </div>
+
                                         <!--PHOTOS DATA-->
-                                        <div class="d-flex-sm-col-1">
+                                        <div class="d-flex-col-1" >
                                             <i class="fas fa-image"
-                                               style="color: #969696;font-size: 15px;margin-left: 10px;margin-right:
-                                               3px"></i>
+                                               style="color: #969696;font-size: 15px;margin-left: 10px;margin-right:3px"></i>
                                         </div>
-                                        <div class="d-flex-sm-col-2">
-                                            <span class="photos-data">10</span>
+                                        <div class="d-flex-col-2" id="photos-data">
+                                            <text class="photos-data">10</text>
                                         </div>
                                     </div>
                                 </div>
-
-
-
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="containter">
-                            <div class="stars">
-                                <div class="stars d-sm-flex" style="margin-bottom: -20px">
-                                    <label class="rate">
-                                        <input type="radio" name="radio1" id="star1" value="star1">
-                                        <i class="fas fa-star star one-star" style="font-size: 15px"></i>
-                                    </label>
-                                    <label class="rate">
-                                        <input type="radio" name="radio1" id="star2" value="star2">
-                                        <i class="fas fa-star star two-star" style="font-size: 15px"></i>
-                                    </label>
-                                    <label class="rate">
-                                        <input type="radio" name="radio1" id="star3" value="star3">
-                                        <i class="fas fa-star star three-star" style="font-size: 15px"></i>
-                                    </label>
-                                    <label class="rate">
-                                        <input type="radio" name="radio1" id="star4" value="star4">
-                                        <i class="fas fa-star star four-star" style="font-size: 15px"></i>
-                                    </label>
-                                    <label class="rate">
-                                        <input type="radio" name="radio1" id="star5" value="star5">
-                                        <i class="fas fa-star star five-star" style="font-size: 15px"></i>
-                                    </label>
-                                </div>
                             </div>
                         </div>
-                        <div class="form-group d-sm pt-2">
-                            <!--USER REVIEW POST DATE-->
-                            <span class="d-flex align-items-start" style="margin-bottom: -25px;">MM/DD/YYYY</span>
 
+                        <div class="post form-group d-sm">
                             <!--USER REVIEW POST-->
                             <label for="review-post"></label>
-                            <textarea class="form-control" rows="" id="review-post"
-                                      style="resize:none;border:none;padding: 0 0 0 0;margin-top:0;">DUCK yummy
-                            </textarea>
+                            <text class="form-control" rows="" id="review-post">DUCK
+                                yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK
+                                yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK
+                                yummy DUCK yummy DUCK yummy DUCK
+                                yummy DUCK yummy DUCK yummy DUCK yummy
+                            </text>
                         </div>
                     </div>
                     <hr class="solid">
                 </div>
                 <div class="col-lg-1"></div>
                 <!--LOCATION & HOURS COLUMN-->
-                <div class="col-lg-4">
+                <div class="col-lg-4" id="loc-hours">
                     <h3>Location & Hours</h3>
                     <div class="row pt-2">
-                        <div class="d-flex">
+                        <div class="col-sm-6">
                             <section class="location">
                                 <!--MAP-->
                                 <iframe
@@ -227,55 +258,41 @@
                                         width="100" height="200" style="border:0;" allowfullscreen=""
                                         loading="lazy"></iframe>
                             </section>
+                        </div>
+                        <div class="col-sm-6">
                             <div class="d-inline-flex">
                                 <!--DAYS COLUMN-->
-                                <div class="pt-1 days-container">
-                                    <ul style="list-style: none;padding-top: 10px;padding-left: 25px;">
-                                        <li style="font-size: 1rem;">MON</li>
-                                        <li style="font-size: 1rem;">TUE</li>
-                                        <li style="font-size: 1rem;">WED</li>
-                                        <li style="font-size: 1rem;">THU</li>
-                                        <li style="font-size: 1rem;">FRI</li>
-                                        <li style="font-size: 1rem;">SAT</li>
-                                        <li style="font-size: 1rem;">SUN</li>
+                                <div class="days-container" id="days">
+                                    <ul style="list-style: none;padding-top: 20px;padding-left: 25px;">
+                                        <li>MON</li>
+                                        <li>TUE</li>
+                                        <li>WED</li>
+                                        <li>THU</li>
+                                        <li>FRI</li>
+                                        <li>SAT</li>
+                                        <li>SUN</li>
                                     </ul>
                                 </div>
                                 <!--HOURS COLUMN-->
-                                <div class="hours-container">
-                                    <ul style="list-style: none;padding-top: 14px;">
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
+                                <div class="hours-container text-nowrap" id="hours">
+                                    <ul style="list-style: none;padding-top: 20px;">
+                                        <li>12:00AM-12:00PM</li>
+                                        <li>12:00AM-12:00PM</li>
+                                        <li>12:00AM-12:00PM</li>
+                                        <li>12:00AM-12:00PM</li>
+                                        <li>12:00AM-12:00PM</li>
+                                        <li>12:00AM-12:00PM</li>
+                                        <li>12:00AM-12:00PM</li>
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="rest-info-container pt-5">
-                            <h3>Restaurant Info</h3>
-                            <!--PHONE NUMBER-->
-                            <span><span
-                                    style="font-size:
-                             20px;">(206)
-                                999-9999</span> <i class="fas fa-phone-square"
-                                                   style="margin-left: 5px;font-size: 18px; color:#880924;"></i></span>
-                            <br>
-                            <!--RESTAURANT WEBSITE -->
-                            <span><span style="font-size:
-                             20px;">www.Website.com</span><i class="fas fa-external-link-alt"
-                                                             style="margin-left: 5px;font-size: 18px; color:#880924;"></i></span>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 </section>
 <section>
     <br>
@@ -291,158 +308,22 @@
     <!-- Grid container -->
     <div class="container p-4">
         <!-- Section: Social media -->
-        <section class="mb-4">
-            <!-- Facebook -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-facebook-f"></i
-            ></a>
-
-            <!-- Twitter -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-twitter"></i
-            ></a>
-
-            <!-- Google -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-google"></i
-            ></a>
-
-            <!-- Instagram -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-instagram"></i
-            ></a>
+        <section class="mb-1">
 
             <!-- Linkedin -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#!" role="button"
             ><i class="fab fa-linkedin-in"></i
             ></a>
 
             <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+            <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#!" role="button"
             ><i class="fab fa-github"></i
             ></a>
         </section>
-        <!-- Section: Social media -->
-
-        <!-- Section: Form -->
-        <section class="">
-            <form action="">
-                <!--Grid row-->
-                <div class="row d-flex justify-content-center">
-
-                    <!--Grid column-->
-                </div>
-                <!--Grid row-->
-            </form>
-        </section>
-        <!-- Section: Form -->
-
-        <!-- Section: Text -->
-        <section class="mb-4">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-                repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-                eum harum corrupti dicta, aliquam sequi voluptate quas.
-            </p>
-        </section>
-        <!-- Section: Text -->
-
-        <!-- Section: Links -->
-        <section class="">
-            <!--Grid row-->
-            <div class="row">
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
-            </div>
-            <!--Grid row-->
-        </section>
-        <!-- Section: Links -->
     </div>
-    <!-- Grid container -->
 
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="text-center p-3" id="footer-txt" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2021 Copyright:
         <a class="text-white" href="https://mdbootstrap.com/">EburgEats.com</a>
     </div>
