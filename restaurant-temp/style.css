@@ -14,7 +14,7 @@ input:focus {
 .nav-item a{
     letter-spacing: .05em;
 }
-/*RESTAURANT PICTURE*/
+/*RESTAURANT PICTURE */
 .rest-picture img {
     object-fit: cover;
     height: 50vh;
