@@ -121,9 +121,7 @@ input:focus {
 }
 
 /*RATINGS*/
-.ratings-container{
-    position: relative;
-}
+
 .stars {
     width: fit-content;
     margin: 0 auto;
