@@ -23,37 +23,45 @@
 <body>
 <header>
     <!--Navigation bar-->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark" style="padding: .5rem 0 1rem 0">
         <div class="container">
-            <a href="#" class="navbar-brand">EBURG EATS</a>
+            <a href="../homepage/home.html" class="navbar-brand">EBURG EATS</a>
 
             <div class="search-box">
                 <!--Directs user to a restaurant-->
-                <form action="#">
-                    <label for="search-bar">
-                        <input style="border-width: 0;border-style: none; margin-bottom: 10px;" class="form-control-sm"
-                               type="text"
-                               id="search-bar"
-                               placeholder="EAT!">
-                    </label>
-                    <button type="submit"
-                            style="background-color:#ab0032;color:#fff;border:none;border-radius: 3px;padding: 4px
-                            10px 4px 4px"><i
-                            class="fas fa-search" style="padding-left: 5px"></i></button>
-                </form>
+                <div class="input-group">
+                    <input type="search" class="form-control" placeholder="Search" id="search-bar"/>
+                    <span class="input-group-text border-0" id="search-addon"
+                          style="background-color:#ab0032;color:#fff;border:none;">
+                        <i class="fas fa-search"></i>
+                    </span>
+                </div>
             </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navmenu">
+            <div class="collapse navbar-collapse text-nowrap" id="navmenu">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item ">
-                        <a href="#" class="nav-link" style="color: white; margin-right: 1em">LOG IN</a>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" id="my-acc-link">MY ACCOUNT</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" style="color: white;">SIGN UP</a>
+                        <a href="#" class="nav-link" id="most-pop-link">MOST POPULAR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" id="new-ed-link">NEWEST ADDITIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" id="your-fave-link">YOUR FAVORITES</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a href="../loginpage/login-page.html" class="nav-link" id="login-link">LOG IN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link" id="signup-link">SIGN UP</a>
                     </li>
                 </ul>
             </div>
@@ -70,50 +78,46 @@
     </div>
     <br>
     <div class="container">
-
         <div class="row">
             <div class="col-lg-8">
                 <!--RESTAURANT NAME-->
-                <div class="d-sm-flex" id="rest-name">
+                <div class="d-md-flex" id="rest-name">
                     <h1>Seng Tong Thai Cuisine</h1>
                 </div>
 
                 <!--RESTAURANT CUISINE--->
-                <div class="d-sm-flex" id="cuisine">
+                <div class="d-md-flex" id="cuisine">
                     <h2 style="font-weight: 300">Thai</h2>
                 </div>
 
                 <!--RESTAURANT RATINGS-->
-                <div class="container">
-                    <div class="d-sm-flex">
-                        <div class="stars">
-                            <div class="stars d-sm-flex">
-                                <label class="rate">
-                                    <input type="radio" name="radio1" id="star1-rest-rating" value="star1">
-                                    <i class="fas fa-star star one-star"></i>
-                                </label>
-                                <label class="rate">
-                                    <input type="radio" name="radio1" id="star2-rest-rating" value="star2">
-                                    <i class="fas fa-star star two-star"></i>
-                                </label>
-                                <label class="rate">
-                                    <input type="radio" name="radio1" id="star3-rest-rating" value="star3">
-                                    <i class="fas fa-star star three-star"></i>
-                                </label>
-                                <label class="rate">
-                                    <input type="radio" name="radio1" id="star4-rest-rating" value="star4">
-                                    <i class="fas fa-star star four-star"></i>
-                                </label>
-                                <label class="rate">
-                                    <input type="radio" name="radio1" id="star5-rest-rating" value="star5">
-                                    <i class="fas fa-star star five-star"></i>
-                                </label>
-                            </div>
-                        </div>
+                <div class="stars d-md-flex" style="padding: 0;">
+                    <div class="stars-container">
+                        <label class="rate">
+                            <input type="radio" name="radio1" id="star1-rest-rating" value="star1">
+                            <i class="fas fa-star star one-star"></i>
+                        </label>
+                        <label class="rate">
+                            <input type="radio" name="radio1" id="star2-rest-rating" value="star2">
+                            <i class="fas fa-star star two-star"></i>
+                        </label>
+                        <label class="rate">
+                            <input type="radio" name="radio1" id="star3-rest-rating" value="star3">
+                            <i class="fas fa-star star three-star"></i>
+                        </label>
+                        <label class="rate">
+                            <input type="radio" name="radio1" id="star4-rest-rating" value="star4">
+                            <i class="fas fa-star star four-star"></i>
+                        </label>
+                        <label class="rate">
+                            <input type="radio" name="radio1" id="star5-rest-rating" value="star5">
+                            <i class="fas fa-star star five-star"></i>
+                        </label>
                     </div>
                 </div>
+
                 <!--buttons-->
-                <div class="d-sm-flex">
+                <div class="d-md-flex">
                     <button class="btn btn-lg shadow-none" id="rest-review">
                         Write a Review
                     </button>
@@ -170,28 +174,32 @@
                                             <div class="stars">
                                                 <div class="stars d-sm-flex">
                                                     <label class="rate">
-                                                        <input type="radio" name="radio1" id="star1"
+                                                        <input type="radio" name="radio1" id="star1-user-rating"
                                                                value="star1">
                                                         <i class="fas fa-star star one-star"
                                                            style="font-size: 15px"></i>
                                                     </label>
                                                     <label class="rate">
-                                                        <input type="radio" name="radio1" id="star2" value="star2">
+                                                        <input type="radio" name="radio1" id="star2-user-rating"
+                                                               value="star2">
                                                         <i class="fas fa-star star two-star"
                                                            style="font-size: 15px"></i>
                                                     </label>
                                                     <label class="rate">
-                                                        <input type="radio" name="radio1" id="star3" value="star3">
+                                                        <input type="radio" name="radio1" id="star3-user-rating"
+                                                               value="star3">
                                                         <i class="fas fa-star star three-star"
                                                            style="font-size: 15px"></i>
                                                     </label>
                                                     <label class="rate">
-                                                        <input type="radio" name="radio1" id="star4" value="star4">
+                                                        <input type="radio" name="radio1" id="star4-user-rating"
+                                                               value="star4">
                                                         <i class="fas fa-star star four-star"
                                                            style="font-size: 15px"></i>
                                                     </label>
                                                     <label class="rate">
-                                                        <input type="radio" name="radio1" id="star5" value="star5">
+                                                        <input type="radio" name="radio1" id="star5-user-rating"
+                                                               value="star5">
                                                         <i class="fas fa-star star five-star"
                                                            style="font-size: 15px"></i>
                                                     </label>
@@ -239,12 +247,12 @@
 
                         <div class="post form-group d-sm">
                             <!--USER REVIEW POST-->
-                                <text class="form-control" id="review-post">DUCK
-                                    yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK
-                                    yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK
-                                    yummy DUCK yummy DUCK yummy DUCK
-                                    yummy DUCK yummy DUCK yummy DUCK yummy
-                                </text>
+                            <text class="form-control" id="review-post">DUCK
+                                yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK
+                                yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK
+                                yummy DUCK yummy DUCK yummy DUCK
+                                yummy DUCK yummy DUCK yummy DUCK yummy
+                            </text>
 
                         </div>
                     </div>
@@ -268,7 +276,7 @@
                             <div class="d-inline-flex">
                                 <!--DAYS COLUMN-->
                                 <div class="days-container" id="days">
-                                    <ul style="list-style: none;padding-top: 20px;padding-left: 25px;">
+                                    <ul style="list-style: none;margin: 1rem 0 1rem 1.5rem; padding:0">
                                         <li>MON</li>
                                         <li>TUE</li>
                                         <li>WED</li>
@@ -280,7 +288,7 @@
                                 </div>
                                 <!--HOURS COLUMN-->
                                 <div class="hours-container text-nowrap" id="hours">
-                                    <ul style="list-style: none;padding-top: 20px;">
+                                    <ul style="list-style: none;padding: 0; margin: 1rem 1.5rem">
                                         <li>12:00AM-12:00PM</li>
                                         <li>12:00AM-12:00PM</li>
                                         <li>12:00AM-12:00PM</li>
