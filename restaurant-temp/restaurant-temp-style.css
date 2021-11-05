@@ -183,14 +183,14 @@
 
 /*RATINGS*/
 
-.rating-item {
+.rating {
     height: 3rem;
     margin-left: -0.3125rem;
     padding: 0.3125rem;
     font-size: 1.5rem;
     position: relative;
 }
-.user-rating-item {
+.user-rating {
     height: 2rem;
     margin-left: -0.3125rem;
     padding: 0.3125rem;
