@@ -24,39 +24,51 @@
 <body>
 <div id ="page-container" class="page-container">
 
+    <!--Navigation Bar-->
     <header>
-        <!--Navigation bar-->
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark padding-top padding-bottom">
             <div class="container">
-                <a href="#" class="navbar-brand">EBURG EATS</a>
+                <a href="../homepage/home.html" class="navbar-brand logo">EBURG EATS</a>
     
-                <div class="search-box">
-                    <!--Directs user to a restaurant-->
-                    <form action="#">
-                        <label for="search-bar">
-                            <input class="form-control-sm" type="text" id="search-bar" placeholder="EAT!"
-                                style="border-radius:
-                            3px;">
-                        </label>
-                        <button type="submit"
-                                style="background-color:#ab0032;color:#fff;border:none;border-radius: 3px;padding: 4px
-                                10px 4px 4px"><i
-                                class="fas fa-search" style="padding-left: 5px"></i></button>
-                    </form>
+                <div class="search-box margin-right margin-left">
+                    <!--Search Bar-->
+                    <div class="input-group">
+                        <input type="search" class="form-control search-style body-txt" placeholder="Search"
+                               id="search-bar"/>
+                        <button class="input-group-text border-0 light-red-bg"
+                                style="border:none;">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
                 </div>
     
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"   data-bs-target="#navmenu">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navmenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
     
-                <div class="collapse navbar-collapse" id="navmenu">
+                <div class="collapse navbar-collapse text-nowrap" id="navmenu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="#" class="nav-link" style="color:#c8c7c7;font-size: 20px;">LOG IN</a>
+                            <a href="#" class="nav-link btn-style margin-right text-white">MY ACCOUNT</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link" style="color: #ab0032;font-size: 20px">SIGN UP</a>
+                            <a href="#" class="nav-link btn-style margin-right text-white">MOST POPULAR</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link btn-style margin-right text-white">NEWEST ADDITIONS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link btn-style margin-right text-white">YOUR FAVORITES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../loginpage/login-page.html" class="nav-link btn-style margin-right text-white">LOG
+                                IN</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link btn-style text-white">SIGN UP</a>
+                        </li>
+    
                     </ul>
                 </div>
             </div>
@@ -82,174 +94,40 @@
 
     </div>
 </div>
+
 <!-- Footer -->
 <footer class="bg-dark text-center text-white">
     <!-- Grid container -->
-    <div class="container p-4">
-        <!-- Section: Social media -->
-        <section class="mb-4">
-            <!-- Facebook -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-facebook-f"></i
-            ></a>
+    <div class="d-sm-flex justify-content-center align-items-center">
+        <div class="row d-sm-flex justify-content-center">
+            <div class="linkedin-container">
+                <div class="linkedin-btns">
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating shadow-none git-btn m-1"
+                       href="https://github.com/John-Fornah/EburgEats"><i class="fab fa-github-alt"></i></a>
 
-            <!-- Twitter -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-twitter"></i
-            ></a>
-
-            <!-- Google -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-google"></i
-            ></a>
-
-            <!-- Instagram -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-instagram"></i
-            ></a>
-
-            <!-- Linkedin -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-linkedin-in"></i
-            ></a>
-
-            <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-github"></i
-            ></a>
-        </section>
-        <!-- Section: Social media -->
-
-        <!-- Section: Form -->
-        <section class="">
-            <form action="">
-                <!--Grid row-->
-                <div class="row d-flex justify-content-center">
-
-                    <!--Grid column-->
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-a"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-c"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-g"></i
+                    ></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-j"></i
+                    ></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-l"></i
+                    ></a>
                 </div>
-                <!--Grid row-->
-            </form>
-        </section>
-        <!-- Section: Form -->
-
-        <!-- Section: Text -->
-        <section class="mb-4">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-                repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-                eum harum corrupti dicta, aliquam sequi voluptate quas.
-            </p>
-        </section>
-        <!-- Section: Text -->
-
-        <!-- Section: Links -->
-        <section class="">
-            <!--Grid row-->
-            <div class="row">
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
             </div>
-            <!--Grid row-->
-        </section>
-        <!-- Section: Links -->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2021 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">EburgEats.com</a>
+        </div>
     </div>
     <!-- Copyright -->
+    <div class="text-center p-3 footer-txt text-uppercase" style="background-color: rgba(0, 0, 0, 0.2);">
+        Copyright © 2021 EburgEats
+    </div>
 </footer>
-<!-- Footer -->
-
-<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-<script src="../star-rating/src/StarRating.js"></script> -->
 
 <script>
     
