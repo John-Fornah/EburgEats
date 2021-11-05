@@ -1,0 +1,93 @@
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 250px;
+    position: absolute; /* Stay in place */
+    background-color: #353746;
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 50px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+  
+/* The navigation menu links */
+.sidenav a {
+    padding: 12px 12px 12px 32px;
+    text-decoration: underline;
+    font-size: 30px;
+    color: #ab0032;
+    display: block;
+    transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+figcaption {
+    position: absolute;
+    text-align: center;
+    right: 20px;
+
+}
+
+figure img {
+    height: 300px;
+    width: 280px;
+    position: absolute;
+    right: 20px;
+
+} 
+
+h3 {
+    text-decoration: underline;
+}
+
+h1 {
+    text-align: center;
+}
+
+.page-container {
+    position: relative;
+    min-height: 100vh;
+    overflow:hidden;
+    padding-bottom: 150px;
+
+}
+
+.page-content {
+    margin-left: 260px
+}
+
+.bg-dark .text-center .text-white .container .p4 .mb-4 .btn .btn-outline-light .btn-floating .m-1 .row .col-lg-3 .col-md-6 .mb-4 .mb-md-0 .text-white .p-3{
+    position: absolute;
+    bottom: 0;
+    height: 2.5;
+
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+}
