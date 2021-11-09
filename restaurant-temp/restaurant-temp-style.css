@@ -110,11 +110,7 @@
     color: rgba(255, 255, 255, .6);
 }
 .restaurant-photos-btn {
-    position: absolute;
-    bottom: 5px;
-    right: 5px;
-    background: transparent;
-    border-color: white;
+    border-color: black;
 }
 
 .post-photo-btn {
