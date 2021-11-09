@@ -5,54 +5,71 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+
     <!--bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Custom css-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='restaurant-temp-style.css') }}">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;700&display=swap"
-          rel="stylesheet">
+    <link
+            href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;700&family=Montserrat:wght@700;900&family=Overpass:wght@200;300;400&display=swap"
+            rel="stylesheet">
     <!--icons-->
-    <script src="https://kit.fontawesome.com/0d601189ad.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8ec657d8d9.js" crossorigin="anonymous"></script>
 
     <title>Restaurant Template</title>
 </head>
 <body>
 <header>
     <!--Navigation bar-->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark padding-top padding-bottom">
         <div class="container">
-            <a href="#" class="navbar-brand">EBURG EATS</a>
+            <a href="../homepage/home.html" class="navbar-brand logo">EBURG EATS</a>
 
-            <div class="search-box">
-                <!--Directs user to a restaurant-->
-                <form action="#">
-                    <label for="search-bar">
-                        <input class="form-control-sm" type="text" id="search-bar" placeholder="EAT!"
-                               style="border-radius:
-                        3px;">
-                    </label>
-                    <button type="submit"
-                            style="background-color:#ab0032;color:#fff;border:none;border-radius: 3px;padding: 4px
-                            10px 4px 4px"><i
-                            class="fas fa-search" style="padding-left: 5px"></i></button>
-                </form>
+            <div class="search-box margin-right margin-left">
+                <!--Search Bar-->
+                <div class="input-group">
+                    <label for="search-bar">Search the site:</label>
+                    <input type="search" class="form-control search-style body-txt" placeholder="Search"
+                           id="search-bar"/>
+                    <button class="input-group-text border-0 light-red-bg"
+                            style="border:none;">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
             </div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navmenu">
+            <div class="collapse navbar-collapse text-nowrap" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link" style="color:#c8c7c7;font-size: 20px;">LOG IN</a>
+                        <a href="../accountOverview/accountOverview.html" class="nav-link btn-style margin-right text-white">MY
+                            ACCOUNT</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link" style="color: #ab0032;font-size: 20px">SIGN UP</a>
+                        <a href="#" class="nav-link btn-style margin-right text-white">MOST POPULAR</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link btn-style margin-right text-white">NEWEST ADDITIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link btn-style margin-right text-white">YOUR FAVORITES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../loginpage/login-page.html" class="nav-link btn-style margin-right text-white">LOG
+                            IN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link btn-style text-white">SIGN UP</a>
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -60,64 +77,76 @@
 </header>
 
 <!--RESTAURANT INFO-->
-<section class="pt-5 text-center">
+<section class="text-center">
 
     <!--RESTAURANT PICTURE-->
-    <div class="restaurant-picture">
-        <img class="img-fluid" src="{{ url_for('static',filename='ducks.webp') }}" alt="Restaurant Photo">
+    <div class="restaurant-img-container">
+        <img class="img-fluid restaurant-img" src="{{ url_for('static',filename='ducks.webp') }}" alt="Restaurant Photo">
     </div>
     <br>
     <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <!--RESTAURANT NAME-->
+                <div class="d-lg-flex restaurant-name-txt text-uppercase header-1">
+                    <h1>Seng Tong Thai Cuisine</h1>
+                </div>
 
-        <!--RESTAURANT NAME-->
-        <div class="d-sm-flex" id="restaurant-name" style="margin-bottom: -15px;">
-            <h1>Restaurant Name</h1>
-        </div>
+                <!--RESTAURANT CUISINE--->
+                <div class="d-lg-flex restaurant-cuisine-txt body-txt text-uppercase">
+                    <h2>Thai</h2>
+                </div>
 
-        <!--RESTAURANT CUISINE-->
-        <div class="d-sm-flex" style="margin-bottom: -15px;">
-            <h2>Cuisine</h2>
-        </div>
+                <!--RESTAURANT RATINGS-->
+                <div class="ml-4 d-lg-flex d-xlg-flex m-0">
+                    <ul class="ratings d-sm-inline-flex no-pads">
+                        <li class="rating d-inline-block" data-rate="1">
+                            <i class="fas fa-star star one-star light-red"></i>
+                        </li>
+                        <li class="rating d-inline-block" data-rate="2">
+                            <i class="fas fa-star star one-star light-red"></i>
+                        </li>
+                        <li class="rating d-inline-block" data-rate="3">
+                            <i class="fas fa-star star one-star light-red"></i>
+                        </li>
+                        <li class="rating d-inline-block" data-rate="4">
+                            <i class="fas fa-star star one-star light-red"></i>
+                        </li>
+                        <li class="rating d-inline-block" data-rate="5">
+                            <i class="fas fa-star star one-star light-red"></i>
+                        </li>
+                    </ul>
+                </div>
 
-        <!--RESTAURANT RATINGS-->
-        <div class="containter">
-            <div class="stars">
-                <div class="stars d-sm-flex">
-                    <label class="rate">
-                        <input type="radio" name="radio1" id="star1" value="star1">
-                        <i class="fas fa-star star one-star"></i>
-                    </label>
-                    <label class="rate">
-                        <input type="radio" name="radio1" id="star2" value="star2">
-                        <i class="fas fa-star star two-star"></i>
-                    </label>
-                    <label class="rate">
-                        <input type="radio" name="radio1" id="star3" value="star3">
-                        <i class="fas fa-star star three-star"></i>
-                    </label>
-                    <label class="rate">
-                        <input type="radio" name="radio1" id="star4" value="star4">
-                        <i class="fas fa-star star four-star"></i>
-                    </label>
-                    <label class="rate">
-                        <input type="radio" name="radio1" id="star5" value="star5">
-                        <i class="fas fa-star star five-star"></i>
-                    </label>
+                <!--buttons-->
+                <div class="d-lg-flex">
+                    <a href="review-post-page/write-a-review.html" class="btn btn-lg shadow-none btn-style light-red-bg write-a-review-btn">
+                        Write a Review
+                    </a>
+                    <a href="#" class="btn btn-lg shadow-none btn-style post-photo-btn margin-left">
+                        <i class="fas fa-camera light-red" style="margin-right: .5rem">
+                        </i>Post a Photo
+                    </a>
+                    <a href="#" class="btn btn-lg shadow-none text-nowrap restaurant-photos-btn btn-style margin-left">
+                        See # Photos
+                    </a>
                 </div>
             </div>
-        </div>
-        <!--buttons-->
-        <div class="d-sm-flex">
-            <button class="btn btn-lg" style="background: #ab0032;color: white"
-                    id="rest-review">Write a
-                Review
-            </button>
-            <button class="btn btn-lg " id="review-photo"
-                    style="margin-left: 10px;border-color: black;"><i class="fas fa-camera"
-                                                                      style="margin-right: 5px; color: #ab0032;"></i>
-                Post a
-                Photo
-            </button>
+            <div class="col-lg-5 mt-5 col-sm pt-5">
+                <div class="container border rounded p-3">
+                    <text class="header-2">Restaurant Information</text>
+
+                    <!--PHONE NUMBER-->
+                    <section><span class="restaurant-info body-txt">(206) 999-9999</span> <i
+                            class="fas fa-phone-square margin-left gray icon-size"></i>
+                    </section>
+
+                    <!--RESTAURANT WEBSITE -->
+                    <section><span class="restaurant-info body-txt">www.website.com</span><i
+                            class="fas fa-external-link-alt margin-left gray icon-size"></i>
+                    </section>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -127,99 +156,102 @@
             <div class="row justify-content-center">
 
                 <!--REVIEW COLUMN-->
-                <div class="col-lg-7">
-                    <h3>REVIEWS</h3>
+                <div class="col-lg-6 col-sm pt-5">
+                    <text class="header-2">REVIEWS</text>
                     <hr class="solid">
                     <div class="review-container">
 
+                        <div class="d-flex flex-row-reverse" style="">
+                            <a class="btn shadow-none" href="#" role="button"
+                               style=""><i class="fas fa-ellipsis-h"></i></a>
+                        </div>
+
                         <div class="container" style="padding-left: 0">
-                            <div class="row">
-                                <div class="col-sm-2">
+                            <div class="row" style="margin-left: 0;padding: 5px 0 5px 0">
+                                <div class="col-sm-2" style="">
                                     <!--USER PROFILE PHOTO-->
-                                    <img src="{{ url_for('static',filename='noface.png') }}" alt="" style="width: 100%; border-radius: 10px">
-                                </div>
+                                    <img src="{{ url_for('static',filename='noface.png') }}" alt="" style="width:5rem;
+                                    height:auto; border-radius:
+                                    10px">
 
-                                <div class="col-sm-3">
-                                    <div class="d-flex flex-sm-row">
-                                        <div class="col-1">
-                                        <!--USER USERNAME-->
-                                        <text>Username</text>
+                                    <div class="user-ratings-container" style="padding-left: 0;padding-right: 0">
+                                        <div class="d-flex-sm-row">
+                                            <ul class="ratings d-sm-inline-flex no-pads">
+                                                <li class="user-rating d-inline-block" data-rate="1">
+                                                    <i class="fas fa-star star one-star light-red"></i>
+                                                </li>
+                                                <li class="user-rating d-inline-block" data-rate="2">
+                                                    <i class="fas fa-star star one-star light-red"></i>
+                                                </li>
+                                                <li class="user-rating d-inline-block" data-rate="3">
+                                                    <i class="fas fa-star star one-star light-red"></i>
+                                                </li>
+                                                <li class="user-rating d-inline-block" data-rate="4">
+                                                    <i class="fas fa-star star one-star light-red"></i>
+                                                </li>
+                                                <li class="user-rating d-inline-block" data-rate="5">
+                                                    <i class="fas fa-star star one-star light-red"></i>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="d-sm-flex text-nowrap">
+                                            <!--USER REVIEW POST DATE-->
+                                            <text class="body-txt gray">MM/DD/YYYY</text>
                                         </div>
                                     </div>
+                                </div>
+
+                                <div class="col-sm-2" style="margin-left: 1rem">
+                                    <div class="d-flex-sm-row ">
+                                        <div class="d-flex-sm-col-1" style="text-align: left;">
+                                            <!--USER USERNAME-->
+                                            <text class="body-txt black">Username</text>
+                                        </div>
+                                    </div>
+
                                     <div class="d-flex flex-sm-row">
-                                        <div class="d-flex-sm-col-1 align-items-center">
-                                            <!--RATINGS DATA-->
-                                            <i class="fas fa-star"
-                                               style="color: #969696;font-size: 15px;margin-right: 3px"></i>
+
+                                        <!--RATINGS DATA-->
+                                        <div class="d-flex-col-1">
+                                            <i class="fas fa-star gray"
+                                               style="font-size: 15px;margin-right: 3px"></i>
                                         </div>
-                                        <div class="d-flex-sm-col-2">
-                                            <span class="ratings-data">50</span>
+                                        <div class="d-flex-col-2" id="ratings-data">
+                                            <text class="ratings-data btn-style gray ">50</text>
                                         </div>
+
                                         <!--PHOTOS DATA-->
-                                        <div class="d-flex-sm-col-1">
-                                            <i class="fas fa-image"
-                                               style="color: #969696;font-size: 15px;margin-left: 10px;margin-right:
-                                               3px"></i>
+                                        <div class="d-flex-col-1">
+                                            <i class="fas fa-image gray"
+                                               style="font-size: 15px;margin-left: 10px;margin-right:3px"></i>
                                         </div>
-                                        <div class="d-flex-sm-col-2">
-                                            <span class="photos-data">10</span>
+                                        <div class="d-flex-col-2" id="photos-data">
+                                            <text class="photos-data btn-style gray">10</text>
                                         </div>
                                     </div>
                                 </div>
-
-
-
-
-                            </div>
-
-                        </div>
-
-
-                        <div class="containter">
-                            <div class="stars">
-                                <div class="stars d-sm-flex" style="margin-bottom: -20px">
-                                    <label class="rate">
-                                        <input type="radio" name="radio1" id="star1" value="star1">
-                                        <i class="fas fa-star star one-star" style="font-size: 15px"></i>
-                                    </label>
-                                    <label class="rate">
-                                        <input type="radio" name="radio1" id="star2" value="star2">
-                                        <i class="fas fa-star star two-star" style="font-size: 15px"></i>
-                                    </label>
-                                    <label class="rate">
-                                        <input type="radio" name="radio1" id="star3" value="star3">
-                                        <i class="fas fa-star star three-star" style="font-size: 15px"></i>
-                                    </label>
-                                    <label class="rate">
-                                        <input type="radio" name="radio1" id="star4" value="star4">
-                                        <i class="fas fa-star star four-star" style="font-size: 15px"></i>
-                                    </label>
-                                    <label class="rate">
-                                        <input type="radio" name="radio1" id="star5" value="star5">
-                                        <i class="fas fa-star star five-star" style="font-size: 15px"></i>
-                                    </label>
-                                </div>
                             </div>
                         </div>
-                        <div class="form-group d-sm pt-2">
-                            <!--USER REVIEW POST DATE-->
-                            <span class="d-flex align-items-start" style="margin-bottom: -25px;">MM/DD/YYYY</span>
 
+                        <div class="post form-group d-sm">
                             <!--USER REVIEW POST-->
-                            <label for="review-post"></label>
-                            <textarea class="form-control" rows="" id="review-post"
-                                      style="resize:none;border:none;padding: 0 0 0 0;margin-top:0;">DUCK yummy
-                            </textarea>
+                            <text class="form-control user-review-post body-txt">DUCK
+                                yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK
+                                yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK yummy DUCK
+                                yummy DUCK yummy DUCK yummy DUCK
+                                yummy DUCK yummy DUCK yummy DUCK yummy
+                            </text>
+
                         </div>
                     </div>
                     <hr class="solid">
                 </div>
                 <div class="col-lg-1"></div>
                 <!--LOCATION & HOURS COLUMN-->
-                <div class="col-lg-4">
-                    <h3>Location & Hours</h3>
+                <div class="col-lg-5 col-sm pt-5" id="loc-hours">
+                    <text class="header-2">Location & Hours</text>
                     <div class="row pt-2">
-                        <div class="d-flex">
+                        <div class="col-sm-6">
                             <section class="location">
                                 <!--MAP-->
                                 <iframe
@@ -227,49 +259,34 @@
                                         width="100" height="200" style="border:0;" allowfullscreen=""
                                         loading="lazy"></iframe>
                             </section>
+                        </div>
+                        <div class="col-sm-6">
                             <div class="d-inline-flex">
                                 <!--DAYS COLUMN-->
-                                <div class="pt-1 days-container">
-                                    <ul style="list-style: none;padding-top: 10px;padding-left: 25px;">
-                                        <li style="font-size: 1rem;">MON</li>
-                                        <li style="font-size: 1rem;">TUE</li>
-                                        <li style="font-size: 1rem;">WED</li>
-                                        <li style="font-size: 1rem;">THU</li>
-                                        <li style="font-size: 1rem;">FRI</li>
-                                        <li style="font-size: 1rem;">SAT</li>
-                                        <li style="font-size: 1rem;">SUN</li>
+                                <div class="days-container body-txt">
+                                    <ul class="restaurant-days no-pads">
+                                        <li>MON</li>
+                                        <li>TUE</li>
+                                        <li>WED</li>
+                                        <li>THU</li>
+                                        <li>FRI</li>
+                                        <li>SAT</li>
+                                        <li>SUN</li>
                                     </ul>
                                 </div>
                                 <!--HOURS COLUMN-->
-                                <div class="hours-container">
-                                    <ul style="list-style: none;padding-top: 14px;">
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
-                                        <li style="font-size: 1rem;">12:00AM-12:00PM</li>
+                                <div class="hours-container text-nowrap body-txt">
+                                    <ul class="restaurant-hours no-pads">
+                                        <li>12:00AM-12:00PM</li>
+                                        <li>12:00AM-12:00PM</li>
+                                        <li>12:00AM-12:00PM</li>
+                                        <li>12:00AM-12:00PM</li>
+                                        <li>12:00AM-12:00PM</li>
+                                        <li>12:00AM-12:00PM</li>
+                                        <li>12:00AM-12:00PM</li>
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="rest-info-container pt-5">
-                            <h3>Restaurant Info</h3>
-                            <!--PHONE NUMBER-->
-                            <span><span
-                                    style="font-size:
-                             20px;">(206)
-                                999-9999</span> <i class="fas fa-phone-square"
-                                                   style="margin-left: 5px;font-size: 18px; color:#880924;"></i></span>
-                            <br>
-                            <!--RESTAURANT WEBSITE -->
-                            <span><span style="font-size:
-                             20px;">www.Website.com</span><i class="fas fa-external-link-alt"
-                                                             style="margin-left: 5px;font-size: 18px; color:#880924;"></i></span>
-
                         </div>
                     </div>
                 </div>
@@ -289,170 +306,40 @@
 <!-- Footer -->
 <footer class="bg-dark text-center text-white">
     <!-- Grid container -->
-    <div class="container p-4">
-        <!-- Section: Social media -->
-        <section class="mb-4">
-            <!-- Facebook -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-facebook-f"></i
-            ></a>
+    <div class="d-sm-flex justify-content-center align-items-center">
+        <div class="row d-sm-flex justify-content-center">
+            <div class="linkedin-container">
+                <div class="linkedin-btns">
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating shadow-none git-btn m-1"
+                       href="https://github.com/John-Fornah/EburgEats"><i class="fab fa-github-alt"></i></a>
 
-            <!-- Twitter -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-twitter"></i
-            ></a>
-
-            <!-- Google -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-google"></i
-            ></a>
-
-            <!-- Instagram -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-instagram"></i
-            ></a>
-
-            <!-- Linkedin -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-linkedin-in"></i
-            ></a>
-
-            <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-            ><i class="fab fa-github"></i
-            ></a>
-        </section>
-        <!-- Section: Social media -->
-
-        <!-- Section: Form -->
-        <section class="">
-            <form action="">
-                <!--Grid row-->
-                <div class="row d-flex justify-content-center">
-
-                    <!--Grid column-->
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-a"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-c"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-g"></i
+                    ></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-j"></i
+                    ></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-l"></i
+                    ></a>
                 </div>
-                <!--Grid row-->
-            </form>
-        </section>
-        <!-- Section: Form -->
-
-        <!-- Section: Text -->
-        <section class="mb-4">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-                repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-                eum harum corrupti dicta, aliquam sequi voluptate quas.
-            </p>
-        </section>
-        <!-- Section: Text -->
-
-        <!-- Section: Links -->
-        <section class="">
-            <!--Grid row-->
-            <div class="row">
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
-
-                <!--Grid column-->
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                    <h5 class="text-uppercase">Links</h5>
-
-                    <ul class="list-unstyled mb-0">
-                        <li>
-                            <a href="#!" class="text-white">Link 1</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 2</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 3</a>
-                        </li>
-                        <li>
-                            <a href="#!" class="text-white">Link 4</a>
-                        </li>
-                    </ul>
-                </div>
-                <!--Grid column-->
             </div>
-            <!--Grid row-->
-        </section>
-        <!-- Section: Links -->
-    </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2021 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">EburgEats.com</a>
+        </div>
     </div>
     <!-- Copyright -->
+    <div class="text-center p-3 footer-txt text-uppercase" style="background-color: rgba(0, 0, 0, 0.2);">
+        Copyright © 2021 EburgEats
+    </div>
 </footer>
-<!-- Footer -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-<script src="../star-rating/src/StarRating.js"></script>
+
 </body>
 </html>
