@@ -12,7 +12,7 @@
 		  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;700&family=Montserrat:wght@700;900&family=Overpass:wght@200;300;400&display=swap"
 		  rel="stylesheet">
  		 <!--icons-->
- 		 <script src="https://kit.fontawesome.com/0d601189ad.js" crossorigin="anonymous"></script>
+ 		 <script src="https://kit.fontawesome.com/8ec657d8d9.js" crossorigin="anonymous"></script>
 </head>
 <style>
 body{
@@ -29,7 +29,6 @@ body{
 	justify-content:center;
 	background-image: url('cwu.jpg');
 	background-size: cover;
-	
 }
 .restuarantbox {
 	display: flex;
@@ -41,19 +40,19 @@ body{
 .mostpopular{
 	flex: .34;
 	border: 2px solid black;
-	background-color: #a00b2b;
+	background-color: #ffffff;
 	padding: 7px;
 }
 .favorites{
 	flex: .34;
 	border: 2px solid black;
-	background-color: #a00b2b;
+	background-color: #ffffff;
 	padding: 7px;
 }
 .newestadditions{
 	flex: .34;
 	border: 2px solid black;
-	background-color: #a00b2b;
+	background-color: #ffffff;
 	padding: 7px;
 }
 .h2{
@@ -66,7 +65,7 @@ body{
 }
 .restuarantList{
 	padding: 2px;
-	background-color: #c8c7c7;
+	background-color: #888585;
 	flex: 1;
 	height: 27%;
 	border: 3px solid black;
@@ -76,26 +75,13 @@ body{
 	margin-top: 10px;
 }
 
-
 </style>
 
 
 <body>
 	<!--Navigation bar-->
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark" style="padding: .5rem 0 1rem 0; height: 5%">
-        <div class="container">
-            <a href="home.html" class="navbar-brand">EBURG EATS</a>
-
-            <div class="search-box">
-                <!--Directs user to a restaurant-->
-                <div class="input-group">
-                    <input type="search" class="form-control" placeholder="Search" id="search-bar"/>
-                    <span class="input-group-text border-0" id="search-addon"
-                          style="background-color:#ab0032;color:#fff;border:none;">
-                        <i class="fas fa-search"></i>
-                    </span>
-                </div>
-            </div>
+        <div class="container-fluid">  
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navmenu">
@@ -103,7 +89,10 @@ body{
             </button>
 
             <div class="collapse navbar-collapse text-nowrap" id="navmenu">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav">
+					<li class="nav-item">
+                        <a href="home.html" class="nav-link" id="my-acc-link">EBURG EATS</a>
+                    </li>
                     <li class="nav-item">
                         <a href="login-page.html" class="nav-link" id="my-acc-link">MY ACCOUNT</a>
                     </li>
@@ -128,44 +117,71 @@ body{
     </nav>
 
 <div class="searchmenu">
-	
+	<div class="search-box">
+		<!--Directs user to a restaurant-->
+		<div class="input-group" style="height: 15%; width: 150%; align-self: center;">
+			<input type="search" class="form-control" placeholder="Search" id="search-bar"/>
+			<span class="input-group-text border-0" id="search-addon"
+				  style="background-color:#ab0032;color:#fff;border:none; width: 12%;">
+				<i class="fas fa-search"></i>
+			</span>
+		</div>
+	</div>
 </div>
 <div class="restuarantbox">
 	<div class="mostpopular">
 		<h2 style="text-align: center; margin-top: 10px;">Most Popular</h2>
-		<div class="restuarantList">
-			Restaurant 1.
-		</div>
-		<div class="restuarantList">
-			Restaurant 2.
-		</div>
-		<div class="restuarantList">
-			Restaurant 3.
-		</div>
+		<a href="restaurant_template.html">
+			<div class="restuarantList">
+			   Restauarant 1.
+			</div>
+		</a>
+		<a href="restaurant_template.html">
+			<div class="restuarantList">
+			   Restauarant 2.
+			</div>
+		</a>
+		<a href="restaurant_template.html">
+			<div class="restuarantList">
+			   Restauarant 3.
+			</div>
+		</a>
 	</div>
 	<div class="favorites">
 		<h2 style="text-align: center; margin-top: 10px;">Favorites</h2>
-		<div class="restuarantList">
-			Restaurant 1.
-		</div>
-		<div class="restuarantList">
-			Restaurant 2.
-		</div>
-		<div class="restuarantList">
-			Restaurant 3.
-		</div>
+		<a href="restaurant_template.html">
+			<div class="restuarantList">
+			   Restauarant 1.
+			</div>
+		</a>
+		<a href="restaurant_template.html">
+			<div class="restuarantList">
+			   Restauarant 2.
+			</div>
+		</a>
+		<a href="restaurant_template.html">
+			<div class="restuarantList">
+			   Restauarant 3.
+			</div>
+		</a>
 	</div>
 	<div class="newestadditions">
 		<h2 style="text-align: center; margin-top: 10px;">Newest Additions</h2>
-		<div class="restuarantList">
-			Restaurant 1.
-		</div>
-		<div class="restuarantList">
-			Restaurant 2.
-		</div>
-		<div class="restuarantList">
-			Restaurant 3.
-		</div>
+		<a href="restaurant_template.html">
+			<div class="restuarantList">
+			   Restauarant 1.
+			</div>
+		</a>
+		<a href="restaurant_template.html">
+			<div class="restuarantList">
+			   Restauarant 2.
+			</div>
+		</a>
+		<a href="restaurant_template.html">
+			<div class="restuarantList">
+			   Restauarant 3.
+			</div>
+		</a>
 	</div>
 </div>
 <footer class="bg-dark text-center text-white">

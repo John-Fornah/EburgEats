@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for
 from EburgEats import app
-from EburgEats.models import User, Review, Buisness, Genre, BuisnessGenre
+from EburgEats.models import User, Review, starRatings, Buisness, Genre, BuisnessGenre
 
 @app.route("/")
 @app.route("/home")
@@ -15,6 +15,9 @@ def template():
 def login():
     return render_template('login-page.html')
 
+@app.route("/review")
+def review():
+    return render_template('write-a-review.html')
 
 ## db work
 ##

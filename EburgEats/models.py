@@ -26,13 +26,21 @@ class Genre(db.Model):
 
 class Review(db.Model): 
     idReview = db.Column(db.Integer, primary_key=True)
-    rating = db.Column(db.String(20), unique=True, nullable=False)
+    idRating = db.Column('idRating', db.Integer, db.ForeignKey('starRatings.idRating'), nullable=False)
     textContext = db.Column(db.String(20), unique=True, nullable=False)
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     idUser = db.Column(db.Integer,db.ForeignKey('user.idUser'), nullable=False)
 
     def __repr__(self): 
         return f"Review('{self.rating}','{self.textContext}','{self.date}')"
+
+class starRatings(db.Model):
+    idRating = db.Column(db.Integer, primary_key=True)
+    rating = db.Column(db.Integer(), nullable=False)
+    idReview = db.Column('idReview', db.Integer, db.ForeignKey('review.idReview'), nullable=False)
+
+    def __repr__(self):
+        return f"rating('{self.rating}')"
 
 class User(db.Model): 
     idUser = db.Column(db.Integer, primary_key=True)
@@ -44,3 +52,4 @@ class User(db.Model):
 
     def __repr__(self): ##define how a user object is printed
         return f"User('{self.username}','{self.password}','{self.email}')"
+
