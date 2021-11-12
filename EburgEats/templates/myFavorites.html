@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;700&display=swap"
           rel="stylesheet">
     <!--icons-->
-    <script src="https://kit.fontawesome.com/0d601189ad.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/8ec657d8d9.js" crossorigin="anonymous"></script>
 
     <title>Account Overview</title>
 </head>
@@ -29,11 +29,11 @@
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark padding-top padding-bottom">
             <div class="container">
                 <a href="{{ url_for('home') }}" class="navbar-brand logo">EBURG EATS</a>
-    
+
                 <div class="search-box margin-right margin-left">
                     <!--Search Bar-->
                     <div class="input-group">
-                        <label for="search-bar">Search the site:</label>
+                        <label for="search-bar"></label>
                         <input type="search" class="form-control search-style body-txt" placeholder="Search"
                                id="search-bar"/>
                         <button class="input-group-text border-0 light-red-bg"
@@ -42,12 +42,12 @@
                         </button>
                     </div>
                 </div>
-    
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navmenu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-    
+
                 <div class="collapse navbar-collapse text-nowrap" id="navmenu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
@@ -55,13 +55,13 @@
                                 ACCOUNT</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url_for('template') }}" class="nav-link btn-style margin-right text-white">MOST POPULAR</a>
+                            <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">MOST POPULAR</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url_for('template') }}" class="nav-link btn-style margin-right text-white">NEWEST ADDITIONS</a>
+                            <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">NEWEST ADDITIONS</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url_for('template') }}" class="nav-link btn-style margin-right text-white">YOUR FAVORITES</a>
+                            <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">YOUR FAVORITES</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ url_for('login') }}" class="nav-link btn-style margin-right text-white">LOG
@@ -70,7 +70,7 @@
                         <li class="nav-item">
                             <a href="{{ url_for('register') }}" class="nav-link btn-style text-white">SIGN UP</a>
                         </li>
-    
+
                     </ul>
                 </div>
             </div>
@@ -79,25 +79,26 @@
 
     <!--Side navigation bar-->
     <div id="mySidenav" class="sidenav">
-        <a href="{{ url_for('account') }}">Account Overview</a>
-        <a href="{{ url_for('myreviews') }}">My Reviews</a>
-        <a href="{{ url_for('favorites') }}">My Favorites</a>
+        <a class="header-2" href="{{ url_for('account') }}">Account Overview</a>
+        <a class="header-2" href="{{ url_for('myreviews') }}">My Reviews</a>
+        <a class="header-2" href="{{ url_for('favorites') }}">My Favorites</a>
     </div>
 
+    <!--Page Content-->
     <div id="pageContent" class="page-content">
         <figure>
-            <img src="{{ url_for('static',filename='accountOverview/images/placeholder.png') }}" alt="profilePic">
+            <img class="profilePic" src="{{ url_for('static',filename='accountOverview/images/placeholder.png') }}" alt="profilePic">
         </figure>
-            <h1>My Favorites</h1><br>
-                <h3>Restaraunt 1</h3>
-                    <p>Hours of Operation</p>
-                    <p>Website/menu & phone number</p><br>
-                <h3>Restaraunt 2</h3>
-                    <p>Hours of Operation</p>
-                    <p>Website/menu & phone number</p><br>
-                <h3>Restaraunt 3</h3>
-                    <p>Hours of Operation</p>
-                    <p>Website/menu & phone number</p>
+        <h1 class="top-header">My Favorites</h1><br>
+        <h3 class="header-1">Restaraunt 1</h3>
+        <p class="body-txt">Hours of Operation</p>
+        <p class="body-txt">Website/menu & phone number</p><br>
+        <h3 class="header-1">Restaraunt 2</h3>
+        <p class="body-txt">Hours of Operation</p>
+        <p class="body-txt">Website/menu & phone number</p><br>
+        <h3 class="header-1">Restaraunt 3</h3>
+        <p class="body-txt">Hours of Operation</p>
+        <p class="body-txt">Website/menu & phone number</p>
     </div>
 </div>
 
@@ -112,19 +113,11 @@
                     <a class="btn btn-outline-light btn-floating shadow-none git-btn m-1"
                        href="https://github.com/John-Fornah/EburgEats"><i class="fab fa-github-alt"></i></a>
 
-                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
-                    ><i class="fa-solid fa-a"></i></a>
-                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
-                    ><i class="fa-solid fa-c"></i></a>
-                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
-                    ><i class="fa-solid fa-g"></i
-                    ></a>
-                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
-                    ><i class="fa-solid fa-j"></i
-                    ></a>
-                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
-                    ><i class="fa-solid fa-l"></i
-                    ></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"><i class="fa-solid fa-a"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"><i class="fa-solid fa-c"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"><i class="fa-solid fa-g"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"><i class="fa-solid fa-j"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"><i class="fa-solid fa-l"></i></a>
                 </div>
             </div>
         </div>
@@ -134,9 +127,10 @@
         Copyright © 2021 EburgEats
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/8ec657d8d9.js" crossorigin="anonymous"></script>
 
-<script>
-    
-</script>
 </body>
 </html>

@@ -142,6 +142,17 @@
     letter-spacing: 0.05rem;
     font-size: 2rem;
 }
+.form-header {
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.05rem;
+    font-size: 1.5rem;
+}
+.home-page-header{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    font-size: 1.5rem;
+}
 
 .restaurant-name-txt {
     margin-bottom: .5rem;

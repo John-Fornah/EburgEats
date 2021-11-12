@@ -9,12 +9,14 @@ from flask_login import login_user, current_user, logout_user
 def home():
     return render_template('home.html')
 
-@app.route("/template")
-def template():
+@app.route("/restaurantPage")
+def restaurantPage():
     return render_template('restaurant_template.html')
 
-@app.route("/review")
-def review():
+@app.route("/new_rating", methods=['GET','POST'])
+# @login_required
+def new_rating():
+
     return render_template('write-a-review.html')
 
 @app.route("/login",methods=['GET','POST'])
@@ -52,7 +54,7 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', form=form)
 
-@app.route("/accountOverview")
+@app.route("/account")
 def account():
     return render_template('accountOverview.html')
 

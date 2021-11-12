@@ -1,99 +1,111 @@
 <html>
 <head>
-        <title> Home </title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='homepage/StylesheetHP.css') }}" type="text/css" />
-		<!--bootstrap-->
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  		<!-- Fonts -->
- 		 <link rel="preconnect" href="https://fonts.googleapis.com">
- 		 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		  <link
-		  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;700&family=Montserrat:wght@700;900&family=Overpass:wght@200;300;400&display=swap"
-		  rel="stylesheet">
- 		 <!--icons-->
- 		 <script src="https://kit.fontawesome.com/0d601189ad.js" crossorigin="anonymous"></script>
+    <title> Home </title>
+
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="{{ url_for('static',filename='restaurant-temp/restaurant-temp-style.css')}}">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans:wght@300;700&family=Montserrat:wght@700;900&family=Overpass:wght@200;300;400&display=swap"
+            rel="stylesheet">
+    <!--icons-->
+    <script src="https://kit.fontawesome.com/8ec657d8d9.js" crossorigin="anonymous"></script>
 </head>
 <style>
-body{
-	background: white;
-	width: 100%;
-	height: 100%;
-	position: relative;
-}
-.searchmenu {
-	display: flex;
-	height: 30%;
-	width: 100%;
-	align-items: center;
-	justify-content:center;
-	background-image: url("{{ url_for('static', filename='homepage/cwu.jpg') }}");
-	background-size: cover;
-	
-}
-.restuarantbox {
-	display: flex;
-	height: 70%;
-}
-.restuarantboxinner{
-	display: flex;
-}
-.mostpopular{
-	flex: .34;
-	border: 2px solid black;
-	background-color: #a00b2b;
-	padding: 7px;
-}
-.favorites{
-	flex: .34;
-	border: 2px solid black;
-	background-color: #a00b2b;
-	padding: 7px;
-}
-.newestadditions{
-	flex: .34;
-	border: 2px solid black;
-	background-color: #a00b2b;
-	padding: 7px;
-}
-.h2{
-	border: 2px solid black;
-	text-align: center;
-	margin-top: 10px;
-	color: white;
-	height: 10%;
-	background-color: white;
-}
-.restuarantList{
-	padding: 2px;
-	background-color: #c8c7c7;
-	flex: 1;
-	height: 27%;
-	border: 3px solid black;
-	border-radius: 10px;
-	text-align: center;
-	cursor: pointer;
-	margin-top: 10px;
-}
+    body {
+        background: white;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .searchmenu {
+        display: flex;
+        height: 30%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        background-image: url("{{ url_for('static', filename='homepage/cwu.jpg') }}");
+        background-size: cover;
+
+    }
+
+    .restuarantbox {
+        display: flex;
+        height: 70%;
+    }
+
+    .restuarantboxinner {
+        display: flex;
+    }
+
+    .mostpopular {
+        flex: .34;
+        border: 2px solid black;
+        background-color: #a00b2b;
+        padding: 7px;
+    }
+
+    .favorites {
+        flex: .34;
+        border: 2px solid black;
+        background-color: #a00b2b;
+        padding: 7px;
+    }
+
+    .newestadditions {
+        flex: .34;
+        border: 2px solid black;
+        background-color: #a00b2b;
+        padding: 7px;
+    }
+
+    .h2 {
+        border: 2px solid black;
+        text-align: center;
+        margin-top: 10px;
+        color: white;
+        height: 10%;
+        background-color: white;
+    }
+
+    .restuarantList {
+        padding: 2px;
+        background-color: #c8c7c7;
+        flex: 1;
+        height: 27%;
+        border: 3px solid black;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+        margin-top: 10px;
+    }
 
 
 </style>
 
 
 <body>
-	<!--Navigation bar-->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark" style="padding: .5rem 0 1rem 0; height: 5%">
+<header>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark padding-top padding-bottom">
         <div class="container">
-            <a href="{{ url_for('home') }}" class="navbar-brand">EBURG EATS</a>
+            <a href="{{ url_for('home') }}" class="navbar-brand logo">EBURG EATS</a>
 
-            <div class="search-box">
-                <!--Directs user to a restaurant-->
+            <div class="search-box margin-right margin-left">
+                <!--Search Bar-->
                 <div class="input-group">
-                    <input type="search" class="form-control" placeholder="Search" id="search-bar"/>
-                    <span class="input-group-text border-0" id="search-addon"
-                          style="background-color:#ab0032;color:#fff;border:none;">
+                    <label for="search-bar"></label>
+                    <input type="search" class="form-control search-style body-txt" placeholder="Search"
+                           id="search-bar"/>
+                    <button class="input-group-text border-0 light-red-bg"
+                            style="border:none;">
                         <i class="fas fa-search"></i>
-                    </span>
+                    </button>
                 </div>
             </div>
 
@@ -101,96 +113,112 @@ body{
                     data-bs-target="#navmenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse text-nowrap" id="navmenu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a href= "{{ url_for('account') }}" class="nav-link" id="my-acc-link">MY ACCOUNT</a>
+                        <a href="{{ url_for('account') }}" class="nav-link btn-style margin-right text-white">MY
+                            ACCOUNT</a>
                     </li>
                     <li class="nav-item">
-                        <a href= "{{ url_for('template') }}" class="nav-link" id="most-pop-link">MOST POPULAR</a>
+                        <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">MOST
+                            POPULAR</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('template') }}" class="nav-link" id="new-ed-link">NEWEST ADDITIONS</a>
+                        <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">NEWEST
+                            ADDITIONS</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('template') }}" class="nav-link" id="your-fave-link">YOUR FAVORITES</a>
-                    </li>
-                    <li class="nav-item ">
-                        <a href="{{ url_for('login') }}" class="nav-link" id="login-link">LOG IN</a>
+                        <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">YOUR
+                            FAVORITES</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('register') }}" class="nav-link" id="signup-link">SIGN UP</a>
+                        <a href="{{ url_for('login') }}" class="nav-link btn-style margin-right text-white">LOG
+                            IN</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('register') }}" class="nav-link btn-style text-white">SIGN UP</a>
+                    </li>
+
                 </ul>
             </div>
         </div>
     </nav>
+</header>
 
 <div class="searchmenu">
-	
+
 </div>
 <div class="restuarantbox">
-	<div class="mostpopular">
-		<h2 style="text-align: center; margin-top: 10px;">Most Popular</h2>
-		<div class="restuarantList">
-			Restaurant 1.
-		</div>
-		<div class="restuarantList">
-			Restaurant 2.
-		</div>
-		<div class="restuarantList">
-			Restaurant 3.
-		</div>
-	</div>
-	<div class="favorites">
-		<h2 style="text-align: center; margin-top: 10px;">Favorites</h2>
-		<div class="restuarantList">
-			Restaurant 1.
-		</div>
-		<div class="restuarantList">
-			Restaurant 2.
-		</div>
-		<div class="restuarantList">
-			Restaurant 3.
-		</div>
-	</div>
-	<div class="newestadditions">
-		<h2 style="text-align: center; margin-top: 10px;">Newest Additions</h2>
-		<div class="restuarantList">
-			Restaurant 1.
-		</div>
-		<div class="restuarantList">
-			Restaurant 2.
-		</div>
-		<div class="restuarantList">
-			Restaurant 3.
-		</div>
-	</div>
+    <div class="mostpopular">
+        <h2 class="home-page-header text-nowrap" style="text-align: center; margin-top: 10px;">Most Popular</h2>
+        <div class="restuarantList">
+            Restaurant 1.
+        </div>
+        <div class="restuarantList">
+            Restaurant 2.
+        </div>
+        <div class="restuarantList">
+            Restaurant 3.
+        </div>
+    </div>
+    <div class="favorites">
+        <h2 class="home-page-header text-nowrap" style="text-align: center; margin-top: 10px;">Favorites</h2>
+        <div class="restuarantList">
+            Restaurant 1.
+        </div>
+        <div class="restuarantList">
+            Restaurant 2.
+        </div>
+        <div class="restuarantList">
+            Restaurant 3.
+        </div>
+    </div>
+    <div class="newestadditions">
+        <h2 class="home-page-header text-nowrap" style="text-align: center; margin-top: 10px;">Newest Additions</h2>
+        <div class="restuarantList">
+            Restaurant 1.
+        </div>
+        <div class="restuarantList">
+            Restaurant 2.
+        </div>
+        <div class="restuarantList">
+            Restaurant 3.
+        </div>
+    </div>
 </div>
+<!--Footer-->
 <footer class="bg-dark text-center text-white">
     <!-- Grid container -->
-    <div class="container p-4">
-        <!-- Section: Social media -->
-        <section class="mb-1">
+    <div class="d-sm-flex justify-content-center align-items-center">
+        <div class="row d-sm-flex justify-content-center">
+            <div class="linkedin-container">
+                <div class="linkedin-btns">
+                    <!-- Github -->
+                    <a class="btn btn-outline-light btn-floating shadow-none git-btn m-1"
+                       href="https://github.com/John-Fornah/EburgEats"><i class="fab fa-github-alt"></i></a>
 
-            <!-- Linkedin -->
-            <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
-            ><i class="fab fa-linkedin-in"></i
-            ></a>
-
-            <!-- Github -->
-            <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
-            ><i class="fab fa-github"></i
-            ></a>
-        </section>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-a"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-c"></i></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-g"></i
+                    ></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-j"></i
+                    ></a>
+                    <a class="btn btn-outline-light btn-floating m-1 shadow-none" href="#" role="button"
+                    ><i class="fa-solid fa-l"></i
+                    ></a>
+                </div>
+            </div>
+        </div>
     </div>
-
     <!-- Copyright -->
-    <div class="text-center p-3" id="footer-txt" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2021 Copyright:
-        <a class="text-white" href="https://mdbootstrap.com/">EburgEats.com</a>
+    <div class="text-center p-3 footer-txt text-uppercase" style="background-color: rgba(0, 0, 0, 0.2);">
+        Copyright © 2021 EburgEats
     </div>
-    <!-- Copyright -->
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"

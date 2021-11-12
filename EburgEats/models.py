@@ -2,6 +2,7 @@ from sqlalchemy.orm import relationship
 from EburgEats import db, login_manager
 from datetime import datetime
 from flask_login import UserMixin
+from sqlalchemy_utils import aggregated
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -36,11 +37,16 @@ class Review(db.Model):
     textContext = db.Column(db.String(20), unique=True, nullable=False)
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     idUser = db.Column(db.Integer,db.ForeignKey('user.id'), nullable=False)
-
     starRatings = relationship("starRating", back_populates="Review")
 
     def __repr__(self): 
         return f"Review('{self.rating}','{self.textContext}','{self.date}')"
+
+    @aggregated('ratings', db.Column(db.Integer))
+    def average_rating(self):
+        return db.func.avg(starRatings.rating)
+
+    ratings = db.relationship('starRatings')
 
 class starRatings(db.Model):
     idRating = db.Column('idRating', db.Integer, db.ForeignKey('review.id'), primary_key=True)
