@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+</head>
+<body>
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input id="username" name="username" required type="text" value="">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" name="email" required type="text" value="">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" required type="password" value="">
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">Confirm_Password</label>
+            <input id="confirm_password" name="confirm_password" required type="password" value="">
+        </div>
+        <div class="form-group">
+            <input id="submit" name="submit" type="submit" value="Sign Up">
+        </div>
+    </form>
+</body>
+</html>

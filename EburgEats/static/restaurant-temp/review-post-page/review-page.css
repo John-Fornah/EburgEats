@@ -1,0 +1,37 @@
+@import url("https://use.fontawesome.com/releases/v5.13.0/css/all.css");
+.review-post {
+    text-align: left;
+    font-size: 1rem;
+    resize: none;
+    border-color: black;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.restaurant-name {
+    margin-bottom: 0;
+}
+
+.post-a-photo {
+    padding-left: 1px;
+}
+
+textarea {
+    resize: none;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+
+/*Star Style*/
+.star-rating{
+    display: inline-flex;
+    padding: 0;
+}
+
+.star-icon{
+    font-size: 2rem;
+}
+
+
+
+
+

@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <link rel="stylesheet" href="{{ url_for('static',filename='login-page.css') }}">
-  <script defer src="{{ url_for('static',filename='login-page.js')}}"></script>
+  <link rel="stylesheet" href="{{ url_for('static',filename='loginpage/login-page.css') }}">
+  <!--<script defer src="{{ url_for('static',filename='login-page.js')}}"></script>-->
 </head>
 
 <style>
@@ -20,13 +20,14 @@
     <div id="login-error-msg-holder">
       <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
     </div>
-    
+
     <form id="login-form" method="POST" action="">
-      <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-      <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
-      <input type="submit" value="Login" id="login-form-submit">
+      {{ form.hidden_tag() }}
+      <input class="login-form-field" id="username" name="username" required type="text" value="">
+      <input class="login-form-field" id="password" name="password" required type="password" value="">
+      <input id="submit" name="submit" type="submit" value="Login">
     </form>
-  
+    
   </main>
 </body>
 

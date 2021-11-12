@@ -1,13 +1,19 @@
-from EburgEats import db
+from sqlalchemy.orm import relationship
+from EburgEats import db, login_manager
 from datetime import datetime
+from flask_login import UserMixin
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 ## this class represents a table on the database
 class BuisnessGenre(db.Model): 
-    idBuisness = db.Column('idBuisness', db.Integer, db.ForeignKey('buisness.idBuisness'), primary_key=True, nullable=False)
-    idGenre = db.Column('idGenre', db.Integer, db.ForeignKey('genre.idGenre'), primary_key=True)
+    idBuisness = db.Column('idBuisness', db.Integer, db.ForeignKey('buisness.id'), primary_key=True, nullable=False)
+    idGenre = db.Column('idGenre', db.Integer, db.ForeignKey('genre.id'), primary_key=True)
 
 class Buisness(db.Model): 
-    idBuisness = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(25), nullable=False)
 
     Genres = db.relationship("BuisnessGenre", backref='Buisness', lazy=True)
@@ -16,7 +22,7 @@ class Buisness(db.Model):
         return f"Buisness('{self.name}')"
 
 class Genre(db.Model): 
-    idGenre = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True)
     genreName = db.Column(db.String(20), unique=True, nullable=False)
 
     Buisnesses = db.relationship("BuisnessGenre", backref='Genre', lazy=True)
@@ -25,25 +31,28 @@ class Genre(db.Model):
         return f"Genre('{self.genreName}')"
 
 class Review(db.Model): 
-    idReview = db.Column(db.Integer, primary_key=True)
-    idRating = db.Column('idRating', db.Integer, db.ForeignKey('starRatings.idRating'), nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
+    idRating = db.Column('idRating', db.Integer, nullable=False)
     textContext = db.Column(db.String(20), unique=True, nullable=False)
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-    idUser = db.Column(db.Integer,db.ForeignKey('user.idUser'), nullable=False)
+    idUser = db.Column(db.Integer,db.ForeignKey('user.id'), nullable=False)
+
+    starRatings = relationship("starRating", back_populates="Review")
 
     def __repr__(self): 
         return f"Review('{self.rating}','{self.textContext}','{self.date}')"
 
 class starRatings(db.Model):
-    idRating = db.Column(db.Integer, primary_key=True)
+    idRating = db.Column('idRating', db.Integer, db.ForeignKey('review.id'), primary_key=True)
     rating = db.Column(db.Integer(), nullable=False)
-    idReview = db.Column('idReview', db.Integer, db.ForeignKey('review.idReview'), nullable=False)
+
+    review = relationship("Review", back_populates="starRating")
 
     def __repr__(self):
         return f"rating('{self.rating}')"
 
-class User(db.Model): 
-    idUser = db.Column(db.Integer, primary_key=True)
+class User(db.Model, UserMixin): 
+    id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(25), unique=True, nullable=False)
     password = db.Column(db.String(25), nullable=False)
     email = db.Column(db.String(35), nullable=False)
@@ -52,4 +61,3 @@ class User(db.Model):
 
     def __repr__(self): ##define how a user object is printed
         return f"User('{self.username}','{self.password}','{self.email}')"
-
