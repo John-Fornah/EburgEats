@@ -24,16 +24,15 @@
 <body>
 <div id ="page-container" class="page-container">
 
-    <!--Navigation bar-->
+    <!--Navigation Bar-->
     <header>
         <nav class="navbar navbar-expand-lg bg-dark navbar-dark padding-top padding-bottom">
             <div class="container">
-                <a href="{{ url_for('home') }}" class="navbar-brand logo">EBURG EATS</a>
+                <a href="../homepage/home.html" class="navbar-brand logo">EBURG EATS</a>
 
                 <div class="search-box margin-right margin-left">
                     <!--Search Bar-->
                     <div class="input-group">
-                        <label for="search-bar"></label>
                         <input type="search" class="form-control search-style body-txt" placeholder="Search"
                                id="search-bar"/>
                         <button class="input-group-text border-0 light-red-bg"
@@ -51,25 +50,23 @@
                 <div class="collapse navbar-collapse text-nowrap" id="navmenu">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="{{ url_for('account') }}" class="nav-link btn-style margin-right text-white">MY
-                                ACCOUNT</a>
+                            <a href="#" class="nav-link btn-style margin-right text-white">MY ACCOUNT</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url_for('restaurantPage') }}"
-                               class="nav-link btn-style margin-right text-white">MOST POPULAR</a>
+                            <a href="#" class="nav-link btn-style margin-right text-white">MOST POPULAR</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">NEWEST ADDITIONS</a>
+                            <a href="#" class="nav-link btn-style margin-right text-white">NEWEST ADDITIONS</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">YOUR FAVORITES</a>
+                            <a href="#" class="nav-link btn-style margin-right text-white">YOUR FAVORITES</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url_for('login') }}" class="nav-link btn-style margin-right text-white">LOG
+                            <a href="../loginpage/login-page.html" class="nav-link btn-style margin-right text-white">LOG
                                 IN</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ url_for('register') }}" class="nav-link btn-style text-white">SIGN UP</a>
+                            <a href="#" class="nav-link btn-style text-white">SIGN UP</a>
                         </li>
 
                     </ul>
@@ -88,12 +85,12 @@
         <figure>
             <img class="profilePic" src="images/placeholder.png" alt="profilePic">
         </figure>
-    
+
         <h1>My Reviews</h1><br>
-            <h3>Top Rated Reviews</h3>
-                <p>Top 3 reviews here?</p>
-            <h3>Recent Reviews</h3>
-                <p>Maybe keep a history of the last 10-20 reviews?</p>
+        <h3>Top Rated Reviews</h3>
+        <p>Top 3 reviews here?</p>
+        <h3>Recent Reviews</h3>
+        <p>Maybe keep a history of the last 10-20 reviews?</p>
 
     </div>
 </div>
