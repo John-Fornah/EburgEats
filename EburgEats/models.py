@@ -37,9 +37,9 @@ class Review(db.Model):
     textContext = db.Column(db.String(20), unique=True, nullable=False)
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     idUser = db.Column(db.Integer,db.ForeignKey('user.id'), nullable=False)
-    
-    #function to map tables together
-    starRatings = relationship("starRating", back_populates="Review")
+
+    #function to mapper Review to starRating
+    ratings = relationship("starRatings", backref="Review", uselist=False)
 
     def __repr__(self): 
         return f"Review('{self.rating}','{self.textContext}','{self.date}')"
@@ -48,14 +48,9 @@ class Review(db.Model):
     def average_rating(self):
         return db.func.avg(starRatings.rating)
 
-    ratings = db.relationship('starRatings')
-
 class starRatings(db.Model):
     idRating = db.Column('idRating', db.Integer, db.ForeignKey('review.id'), primary_key=True)
     rating = db.Column(db.Integer(), nullable=False)
-    
-    #function to map tables together
-    review = relationship("Review", back_populates="starRating")
 
     def __repr__(self):
         return f"rating('{self.rating}')"
