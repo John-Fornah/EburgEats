@@ -1,7 +1,8 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, RadioField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from EburgEats.models import User
+
 
 class RegistrationForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired(), Length(min=5, max=25)])
@@ -26,3 +27,9 @@ class LoginForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired(), Length(min=8, max=25)])
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
+
+class ReviewForm(FlaskForm):
+    business = StringField('Business', validators=[DataRequired(), Length(min=5, max=100)])
+    rating = RadioField('Rating', choices=[('1','one star'),('2','two stars'),('3','three stars'),('4','four stars'),('5','five stars')])
+    review = TextAreaField('Review', validators=[DataRequired(), Length(min=5, max=500)])
+    submit = SubmitField('Submit')

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, flash, redirect
 from EburgEats import app, db, bcrypt
-from EburgEats.forms import LoginForm, RegistrationForm
+from EburgEats.forms import LoginForm, RegistrationForm, ReviewForm
 from EburgEats.models import User, Review, Buisness, Genre, BuisnessGenre, starRatings
 from flask_login import login_user, current_user, logout_user
 
@@ -13,15 +13,25 @@ def home():
 def restaurantPage():
     return render_template('restaurant_template.html')
 
-@app.route("/new_rating", methods=['GET','POST'])
+@app.route("/new_review", methods=['GET','POST'])
 # @login_required
-def new_rating():
+def new_review():
+    form = ReviewForm()
+    if form.validate_on_submit():
+        review = Review(business=form.business.data, rating=request.form["rate"], review=form.review.data,)
+        db.session.add(review)
+        db.session.commit()
+        flash('Your review has been posted!', 'success')
+        return redirect('/restaurantPage')
+    if request.method == 'POST':
+        review = request.form["reviewPost"]
+        return redirect(url_for("/restaurantPage", review=review))
 
-    return render_template('write-a-review.html')
+    return render_template('write-a-review.html', title='New Review', form=form, legend='New Review')
 
 @app.route("/login",methods=['GET','POST'])
 def login():
-    ## a logged in user doesnt need access to the login or register page
+    # a logged in user doesnt need access to the login or register page
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     
@@ -29,7 +39,7 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
 
-        ##login if user with inputted username and password exist in db
+        #login if user with inputted username and password exist in db
         if user and bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user, remember=form.remember.data)
             print('login Successful')
@@ -40,7 +50,7 @@ def login():
 
 @app.route("/register",methods=['GET','POST'])
 def register():
-     ## a logged in user doesnt need access to the login or register page
+     # a logged in user doesnt need access to the login or register page
     if current_user.is_authenticated:
         return redirect(url_for('home'))
     
@@ -50,7 +60,7 @@ def register():
         user = User(username=form.username.data, password=hashed_password, email=form.email.data)
         db.session.add(user)
         db.session.commit()
-        print("account created you can now log in") ## layouts dont show a sucess atm
+        print("account created you can now log in") # layouts dont show a success atm
         return redirect(url_for('login'))
     return render_template('register.html', form=form)
 

@@ -114,14 +114,16 @@
 
                         </form>
                     </div>
-
                 </div>
                 <!--REVIEW POST-->
-                <form action="">
-                <label>
-                    <textarea class="body-txt" name="textarea" placeholder="Write a Review..." cols="75"
-                              rows="10">
-                    </textarea>
+                <form method="POST">
+                    {{ form.hidden_tag()}}
+                <label for="review-post">
+                    <textarea id="review-post" class="body-txt" name="reviewPost" placeholder="Write a Review..."
+                              cols="75"
+                              rows="10"></textarea>
+                    <br>
+                    {{ form.submit(class = "d-flex margin-top btn btn-lg shadow-none btn-style light-red-bg ") }}
                 </label>
                 </form>
 

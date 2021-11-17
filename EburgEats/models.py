@@ -16,8 +16,13 @@ class BuisnessGenre(db.Model):
 class Buisness(db.Model): 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(25), nullable=False)
-
     Genres = db.relationship("BuisnessGenre", backref='Buisness', lazy=True)
+
+    @aggregated('ratings', db.Column(db.Integer))
+    def average_rating(self):
+        return db.func.avg(starRatings.rating)
+
+    ratings = db.relationship('starRatings')
 
     def __repr__(self): ##define how a user object is printed
         return f"Buisness('{self.name}')"
@@ -34,23 +39,22 @@ class Genre(db.Model):
 class Review(db.Model): 
     id = db.Column(db.Integer, primary_key=True)
     idRating = db.Column('idRating', db.Integer, nullable=False)
-    textContext = db.Column(db.String(20), unique=True, nullable=False)
+    review = db.Column(db.String(20), unique=True, nullable=False)
     date = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     idUser = db.Column(db.Integer,db.ForeignKey('user.id'), nullable=False)
 
-    #function to mapper Review to starRating
-    ratings = relationship("starRatings", backref="Review", uselist=False)
+    #function to mapper Review to starRatings
+    rating = relationship("starRatings", backref="Review", uselist=False)
 
-    def __repr__(self): 
-        return f"Review('{self.rating}','{self.textContext}','{self.date}')"
+    def __repr__(self):
+        return f"Review('{self.rating}','{self.review}','{self.date}')"
 
-    @aggregated('ratings', db.Column(db.Integer))
-    def average_rating(self):
-        return db.func.avg(starRatings.rating)
 
 class starRatings(db.Model):
-    idRating = db.Column('idRating', db.Integer, db.ForeignKey('review.id'), primary_key=True)
+    id = db.Column('idRating', db.Integer, db.ForeignKey('review.id'), primary_key=True)
     rating = db.Column(db.Integer(), nullable=False)
+
+    idReview = db.Column(db.Integer, db.ForeignKey(Review.id))
 
     def __repr__(self):
         return f"rating('{self.rating}')"
