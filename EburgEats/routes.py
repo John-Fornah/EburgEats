@@ -4,6 +4,26 @@ from EburgEats.forms import LoginForm, RegistrationForm, ReviewForm
 from EburgEats.models import User, Review, Buisness, Genre, BuisnessGenre, starRatings
 from flask_login import login_user, current_user, logout_user
 
+#dummy data
+posts = [
+    {
+    'username' : 'No Face',
+    'rating' : '5',
+    'date': "11/21/2021",
+    'review': " SERIOUSLY SWEAR BY THIS PLACE!! Pad Thai is always spot on, the chicken is fantastic, fresh prawn rolls extra peanut sauce... and the Thai iced tea... UNBELIEVABLE!! Best Thai in town hands down. I've never had an issue with any takeout order. This business is fast and efficient! This is most definitely the best Thai I've had!  its my 9 th take out order and again... I'll be back! Thank you Seng Tong Thai!"
+    }
+]
+restaurants = [
+    {
+    'name' : 'Seng Tong Thai Cuisine',
+    'cuisine' : 'Thai',
+    'phone' : '(509) 933-2888',
+    'website' : 'https://sengtongthaicuisine.com',
+    'location' : '1713 Canyon Rd, Ellensburg, WA 98926'
+    }
+]
+# end of dummy post data
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -11,23 +31,27 @@ def home():
 
 @app.route("/restaurantPage")
 def restaurantPage():
-    return render_template('restaurant_template.html')
+    return render_template('restaurant_template.html', posts = posts, restaurants=restaurants)
+
+@app.route("/photosPage")
+def photosPage():
+    return render_template('photos-page.html', restaurants=restaurants)
 
 @app.route("/new_review", methods=['GET','POST'])
-# @login_required
 def new_review():
     form = ReviewForm()
-    if form.validate_on_submit():
-        review = Review(business=form.business.data, rating=request.form["rate"], review=form.review.data,)
-        db.session.add(review)
-        db.session.commit()
-        flash('Your review has been posted!', 'success')
-        return redirect('/restaurantPage')
-    if request.method == 'POST':
-        review = request.form["reviewPost"]
-        return redirect(url_for("/restaurantPage", review=review))
 
-    return render_template('write-a-review.html', title='New Review', form=form, legend='New Review')
+#     if form.validate_on_submit():
+#         review = Review(rating=request.form["rate"], review=form.review.data)
+#         db.session.add(review)
+#         db.session.commit()
+#         flash('Your review has been posted!', 'success')
+#         return redirect('/restaurantPage')
+#     if request.method == 'POST':
+#         review = request.form["reviewPost"]
+#         return redirect(url_for("restaurantPage"))
+
+    return render_template('write-a-review.html', title='New Review', form=form, legend='New Review', restaurants=restaurants)
 
 @app.route("/login",methods=['GET','POST'])
 def login():

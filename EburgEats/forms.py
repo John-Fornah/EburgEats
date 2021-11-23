@@ -29,7 +29,6 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 class ReviewForm(FlaskForm):
-    business = StringField('Business', validators=[DataRequired(), Length(min=5, max=100)])
-    rating = RadioField('Rating', choices=[('1','one star'),('2','two stars'),('3','three stars'),('4','four stars'),('5','five stars')])
+    rating = RadioField('Rating', coerce=int, choices=[('1','one star'),('2','two stars'),('3','three stars'),('4','four stars'),('5','five stars')])
     review = TextAreaField('Review', validators=[DataRequired(), Length(min=5, max=500)])
     submit = SubmitField('Submit')

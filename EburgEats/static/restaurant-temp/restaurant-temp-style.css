@@ -30,6 +30,11 @@
     margin-bottom: 1rem;
 }
 
+.page-margin {
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
+
 .no-pads {
     padding: 0;
 }
@@ -96,10 +101,7 @@
     width: 100%;
 }
 
-.restaurant-photos-btn:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    color: rgba(255, 255, 255, .6);
-}
+
 
 /*BUTTONS*/
 .btn-style {
@@ -109,8 +111,12 @@
 .write-a-review-btn:hover{
     color: rgba(255, 255, 255, .6);
 }
-.restaurant-photos-btn {
+
+.restaurant-photos-btn{
     border-color: black;
+}
+.restaurant-photos-btn:hover {
+    color: rgba(0, 0, 0, .6);
 }
 
 .post-photo-btn {
@@ -203,8 +209,11 @@
     padding: 0.3125rem;
     font-size: .9rem;
     position: relative;
+    display: inline-block;
 }
-
+#ratings-form{
+    margin: 5px 0 5px 0;
+}
 .rating-item input[type="radio"] {
     opacity: 0;
     position: absolute;
@@ -228,3 +237,12 @@
 .location iframe {
     width: 100%;
 }
+
+.card{
+    border-radius: 10px;
+    margin-right: .3rem;
+    cursor: pointer;
+    height: 100%;
+    object-fit: cover;
+}
+
