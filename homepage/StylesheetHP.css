@@ -62,3 +62,63 @@
 #search-bar{
   font-family: 'Overpass', sans-serif;
 }
+
+body{
+	background: white;
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+.searchmenu {
+	display: flex;
+	height: 30%;
+	width: 100%;
+	align-items: center;
+	justify-content:center;
+	background-image: url('cwu.jpg');
+	background-size: cover;
+}
+.restuarantbox {
+	display: flex;
+	height: 70%;
+}
+.restuarantboxinner{
+	display: flex;
+}
+.mostpopular{
+	flex: .34;
+	border: 2px solid black;
+	background-color: #ffffff;
+	padding: 7px;
+}
+.favorites{
+	flex: .34;
+	border: 2px solid black;
+	background-color: #ffffff;
+	padding: 7px;
+}
+.newestadditions{
+	flex: .34;
+	border: 2px solid black;
+	background-color: #ffffff;
+	padding: 7px;
+}
+.h2{
+	border: 2px solid black;
+	text-align: center;
+	margin-top: 10px;
+	color: white;
+	height: 10%;
+	background-color: white;
+}
+.restuarantList{
+	padding: 2px;
+	background-color: #888585;
+	flex: 1;
+	height: 27%;
+	border: 3px solid black;
+	border-radius: 10px;
+	text-align: center;
+	cursor: pointer;
+	margin-top: 10px;
+}
