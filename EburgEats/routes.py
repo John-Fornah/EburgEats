@@ -19,7 +19,18 @@ restaurants = [
     'cuisine' : 'Thai',
     'phone' : '(509) 933-2888',
     'website' : 'https://sengtongthaicuisine.com',
-    'location' : '1713 Canyon Rd, Ellensburg, WA 98926'
+    'location' : '1713 Canyon Rd, Ellensburg, WA 98926',
+    }
+]
+hours = [
+    {
+    'mon' : '12-8:30PM',
+    'tue' : '12-8:30PM',
+    'wed' : '12-8:30PM',
+    'thu' : '12-8:30PM',
+    'fri' : '12-8:30PM',
+    'sat' : '12-8:30PM',
+    'sun' : 'CLOSED'
     }
 ]
 # end of dummy post data
@@ -31,7 +42,7 @@ def home():
 
 @app.route("/restaurantPage")
 def restaurantPage():
-    return render_template('restaurant_template.html', posts = posts, restaurants=restaurants)
+    return render_template('restaurant_template.html', posts = posts, restaurants=restaurants, hours=hours)
 
 @app.route("/photosPage")
 def photosPage():
@@ -41,17 +52,18 @@ def photosPage():
 def new_review():
     form = ReviewForm()
 
-#     if form.validate_on_submit():
-#         review = Review(rating=request.form["rate"], review=form.review.data)
-#         db.session.add(review)
-#         db.session.commit()
-#         flash('Your review has been posted!', 'success')
-#         return redirect('/restaurantPage')
-#     if request.method == 'POST':
-#         review = request.form["reviewPost"]
-#         return redirect(url_for("restaurantPage"))
+    if form.validate_on_submit():
+        review = Review(rating=request.form["rate"], review=form.review.data)
+        db.session.add(review)
+        db.session.commit()
+        print('Your review has been posted!', 'success')
+        return redirect('/restaurantPage')
+    if request.method == 'POST':
+        review = request.form["reviewPost"]
+        return redirect(url_for("restaurantPage"))
 
-    return render_template('write-a-review.html', title='New Review', form=form, legend='New Review', restaurants=restaurants)
+    return render_template('write-a-review.html', title='New Review', form=form, legend='New Review',
+    restaurants=restaurants)
 
 @app.route("/login",methods=['GET','POST'])
 def login():

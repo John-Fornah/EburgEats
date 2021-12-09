@@ -18,7 +18,8 @@
           rel="stylesheet">
     <!--icons-->
     <script src="https://kit.fontawesome.com/8ec657d8d9.js" crossorigin="anonymous"></script>
-    <title> {% block title %} Review Page {% endblock %}</title>
+    {% for restaurant in restaurants %}
+    <title> {{restaurant.name}}</title>
 </head>
 <header>
     <!--Navigation bar-->
@@ -69,7 +70,6 @@
                     <li class="nav-item">
                         <a href="{{ url_for('register') }}" class="nav-link btn-style text-white">SIGN UP</a>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -79,7 +79,6 @@
 <section class="text-center">
     <div class="container d-sm-flex justify-content-center">
         <div class="row">
-            {% for restaurant in restaurants %}
             <div class="post form-group d-sm">
                 <div class="mt-5">
                     <h1 class="d-flex text-nowrap restaurant-name text-uppercase header-1 margin-top">{{ restaurant.name }}</h1>
@@ -88,8 +87,8 @@
                 <div class="d-sm-flex">
                     {{ review.rating }}
                     <div class="rate">
-                        <form id="ratings-form" method="POST" action="">
-                            <input type="radio" id="star1" name="rate" value="1" style="display: none"/>
+                        <form id="ratings-form" method="GET" action="">
+                             <input type="radio" id="star1" name="rate" value="1" style="display: none"/>
                             <label class="star-icon" data-index="0" for="star1" title="text">
                                 <i class="fas fa-star"></i>
                             </label>
@@ -117,10 +116,10 @@
                     </div>
                 </div>
                 <!--REVIEW POST-->
-                <form method="POST">
+                <form method="GET">
                     {{ review.review }}
-                    <label for="review-post">
-                    <textarea id="review-post" class="body-txt" name="reviewPost" placeholder="Write a Review..."
+                    <label for="reviewPost">
+                    <textarea id="reviewPost" class="body-txt" name="reviewPost" placeholder="Write a Review..."
                               cols="75"
                               rows="10"></textarea>
                         <br>
@@ -133,8 +132,8 @@
                     <h2 class="d-flex text-nowrap post-a-photo text-uppercase header-2 margin-top"
                         style="margin-bottom: 0">Post a Photo</h2>
                 </div>
-                {% endfor %}
             </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -190,8 +189,7 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 <!--jquery-->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script>
     var rating = -1, userID = 0; //User haven't rated
 

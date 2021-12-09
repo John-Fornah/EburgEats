@@ -145,13 +145,12 @@
                     <text class="header-2">Restaurant Information</text>
 
                     <!--PHONE NUMBER-->
-                    <section><span class="restaurant-info body-txt">{{ restaurant.phone }}</span> <i
-                            class="fas fa-phone-square margin-left gray icon-size"></i>
+                    <section><span class="restaurant-info body-txt margin-bottom">{{ restaurant.phone }}</span>
                     </section>
 
                     <!--RESTAURANT WEBSITE -->
-                    <section><span class="restaurant-info body-txt">{{ restaurant.website}}</span><i
-                            class="fas fa-external-link-alt margin-left gray icon-size"></i>
+                    <section>
+                        <a class="restaurant-info body-txt" id="restaurant-web" href="{{restaurant.website}}">{{restaurant.website}}</a>
                     </section>
                 </div>
             </div>
@@ -289,26 +288,28 @@
                             <!--DAYS COLUMN-->
                             <div class="days-container body-txt">
                                 <ul class="restaurant-days no-pads">
-                                    <li style="font-weight: bold">MON</li>
-                                    <li style="font-weight: bold">TUE</li>
-                                    <li style="font-weight: bold">WED</li>
-                                    <li style="font-weight: bold">THU</li>
-                                    <li style="font-weight: bold">FRI</li>
-                                    <li style="font-weight: bold">SAT</li>
-                                    <li style="font-weight: bold">SUN</li>
+                                    <li class="days">MON</li>
+                                    <li class="days">TUE</li>
+                                    <li class="days">WED</li>
+                                    <li class="days">THU</li>
+                                    <li class="days">FRI</li>
+                                    <li class="days">SAT</li>
+                                    <li class="days">SUN</li>
                                 </ul>
                             </div>
                             <!--HOURS COLUMN-->
+                            {% for hour in hours %}
                             <div class="hours-container text-nowrap body-txt">
                                 <ul class="restaurant-hours no-pads">
-                                    <li>12:00AM - 12:00PM</li>
-                                    <li>12:00AM - 12:00PM</li>
-                                    <li>12:00AM - 12:00PM</li>
-                                    <li>12:00AM - 12:00PM</li>
-                                    <li>12:00AM - 12:00PM</li>
-                                    <li>12:00AM - 12:00PM</li>
-                                    <li>12:00AM - 12:00PM</li>
+                                    <li>{{hour.mon}}</li>
+                                    <li>{{hour.tue}}</li>
+                                    <li>{{hour.wed}}</li>
+                                    <li>{{hour.thu}}</li>
+                                    <li>{{hour.fri}}</li>
+                                    <li>{{hour.sat}}</li>
+                                    <li>{{hour.sun}}</li>
                                 </ul>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>

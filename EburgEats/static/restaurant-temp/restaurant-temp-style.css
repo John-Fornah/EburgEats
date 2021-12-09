@@ -2,6 +2,11 @@
     text-decoration: none;
     list-style: none;
 }
+a, a:before, a:after, a:hover{
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+}
 
 /*FONTS USED
     font-family: 'Bebas Neue', cursive;
@@ -181,9 +186,13 @@
     text-align: left;
 }
 
-.restaurant-days {
+.restaurant-days{
     margin: 1rem 0 1rem 1.5rem;
 }
+.days{
+    font-weight: bold;
+}
+
 
 .restaurant-hours {
     margin: 1rem 1.5rem;
