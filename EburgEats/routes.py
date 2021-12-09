@@ -1,3 +1,4 @@
+import secrets, os
 from flask import Flask, render_template, url_for, request, flash, redirect
 from EburgEats import app, db, bcrypt
 from EburgEats.forms import LoginForm, RegistrationForm, ReviewForm
@@ -100,17 +101,53 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html', form=form)
 
-@app.route("/account")
+def save_picture(form_picture):
+    random_hex = secrets.token_hex(8)
+    _, f_ext = os.path.splitext(form_picture.filename)
+    picture_fn = random_hex + f_ext
+    picture_path = os.path.join(app.root_path, 'static/accountOverview/images', picture_fn)
+    form_picture.save(picture_path)
+    return picture_fn
+
+@app.route("/account", methods=['GET','POST'])
 def account():
-    return render_template('accountOverview.html')
+    if current_user.is_authenticated == False:
+        return redirect(url_for('login'))
+    form = UpdateAccountForm()
+    if form.validate_on_submit():
+        if form.picture.data:
+            picture_file= save_picture(form.picture.data)
+            current_user.image_file = picture_file
+        current_user.username = form.username.data
+        current_user.email = form.email.data
+        db.session.commit()
+        flash('Your account has been updated!', 'success')
+        return redirect(url_for('account'))
+    elif request.method == 'GET':
+        print(form.username)
+        form.username.data = current_user.username
+        form.email.data = current_user.email
+    image_file = url_for('static', filename='accountOverview/images/' + current_user.image_file)
+    return render_template('accountOverview.html', user = current_user, image_file = image_file, form = form) 
 
 @app.route("/favorites")
 def favorites():
-    return render_template('myFavorites.html')
+    if current_user.is_authenticated == False:
+        return redirect(url_for('/login'))
+    buis1 = Buisness(name='Seng Tong Thai Cuisine',genre='Thai',address='1713 Canyon Rd, Ellensburg, WA 98926',phone='(509) 993-2888',website='https://sengtongthaicuisine.com')
+    buis2 = Buisness(name='Campus U-Tote-Em',genre='American',address='810 E University Way Ellensburg, WA 98926',phone='(509) 925-1600', website='http://campusutotem.com')
+    buis3 = Buisness(name='Tacos Chalitos',genre='Mexican',address='209 S Main St, Ellensburg, WA 98926',phone='(509) 962-5643', website='http://tacoschalito.com')
+    
+    db.session.commit()
+    image_file = url_for('static', filename='accountOverview/images/' + current_user.image_file)
+    return render_template('myFavorites.html', user = current_user, image_file = image_file, buis1 = buis1, buis2 = buis2, buis3 = buis3)
 
 @app.route("/myReviews")
 def myreviews():
-    return render_template('myReviews.html')
+    if current_user.is_authenticated == False:
+        return redirect(url_for('/login'))
+    image_file = url_for('static', filename='accountOverview/images/' + current_user.image_file)
+    return render_template('myReviews.html',  user = current_user, image_file = image_file)
 
 ##usally this is a button on the home page, will need to change how homepage looks after a user logs in
 @app.route("/logout")

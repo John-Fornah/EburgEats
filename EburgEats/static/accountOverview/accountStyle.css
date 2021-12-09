@@ -77,12 +77,16 @@ h1 {
 }
 
 .page-content {
-    margin-left: 260px
+    margin-left: 260px;
+    margin-right: 300px;
 }
 
 .profilePic {
+    width: 15%;
     height: auto;
     border-radius: 50%;
+    position: absolute;
+    top: 5%;
 }
 
 /* COPPIED FROM LENA FOR THE NAVBAR AND FOOTER*/

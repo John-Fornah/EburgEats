@@ -22,61 +22,64 @@
 </head>
 
 <body>
-<div id ="page-container" class="page-container">
+<!--Navigation bar-->
+<header>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark padding-top padding-bottom">
+        <div class="container">
+            <a href="{{ url_for('home') }}" class="navbar-brand logo">EBURG EATS</a>
 
-    <!--Navigation bar-->
-    <header>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark padding-top padding-bottom">
-            <div class="container">
-                <a href="{{ url_for('home') }}" class="navbar-brand logo">EBURG EATS</a>
-
-                <div class="search-box margin-right margin-left">
-                    <!--Search Bar-->
-                    <div class="input-group">
-                        <label for="search-bar"></label>
-                        <input type="search" class="form-control search-style body-txt" placeholder="Search"
-                               id="search-bar"/>
-                        <button class="input-group-text border-0 light-red-bg"
-                                style="border:none;">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navmenu">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse text-nowrap" id="navmenu">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a href="{{ url_for('account') }}" class="nav-link btn-style margin-right text-white">MY
-                                ACCOUNT</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">MOST POPULAR</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">NEWEST ADDITIONS</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">YOUR FAVORITES</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url_for('login') }}" class="nav-link btn-style margin-right text-white">LOG
-                                IN</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ url_for('register') }}" class="nav-link btn-style text-white">SIGN UP</a>
-                        </li>
-
-                    </ul>
+            <div class="search-box margin-right margin-left">
+                <!--Search Bar-->
+                <div class="input-group">
+                    <label for="search-bar"></label>
+                    <input type="search" class="form-control search-style body-txt" placeholder="Search"
+                            id="search-bar"/>
+                    <button class="input-group-text border-0 light-red-bg"
+                            style="border:none;">
+                        <i class="fas fa-search"></i>
+                    </button>
                 </div>
             </div>
-        </nav>
-    </header>
 
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navmenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse text-nowrap" id="navmenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a href="{{ url_for('account') }}" class="nav-link btn-style margin-right text-white">MY
+                            ACCOUNT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">MOST
+                            POPULAR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">NEWEST
+                            ADDITIONS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">YOUR
+                            FAVORITES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('login') }}" class="nav-link btn-style margin-right text-white">LOG
+                            IN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ url_for('register') }}" class="nav-link btn-style text-white">SIGN UP</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!--MainPage-->
+<div id="page-container" class="page-container">
     <!--Side navigation bar-->
     <div id="mySidenav" class="sidenav">
         <a class="header-2" href="{{ url_for('account') }}">Account Overview</a>
@@ -86,20 +89,23 @@
 
     <!--Page Content-->
     <div id="pageContent" class="page-content">
-        <figure>
-            <img class="profilePic" src="{{ url_for('static',filename='accountOverview/images/placeholder.png') }}" alt="profilePic">
-        </figure>
-        <h1 class="top-header">My Favorites</h1><br>
-        <h3 class="header-1">Restaraunt 1</h3>
-        <p class="body-txt">Hours of Operation</p>
-        <p class="body-txt">Website/menu & phone number</p><br>
-        <h3 class="header-1">Restaraunt 2</h3>
-        <p class="body-txt">Hours of Operation</p>
-        <p class="body-txt">Website/menu & phone number</p><br>
-        <h3 class="header-1">Restaraunt 3</h3>
-        <p class="body-txt">Hours of Operation</p>
-        <p class="body-txt">Website/menu & phone number</p>
+        <h1 class="top-header">{{ user.username }}'s Favorites</h1><br>
+        <h3 class="header-1">{{buis1.name}}</h3>
+        <p> Visit <a href="{{ buis1.website }}">{{ buis1.name }} </a></p>
+        <p class="body-txt">Phone: {{ buis1.phone }}</p>
+        <p class="body-txt">Address: {{ buis1.address }}</p><br>
+        <h3 class="header-1">{{buis2.name}}</h3>
+        <p> Visit <a href="{{ buis2.website }}">{{ buis2.name }} </a></p>
+        <p class="body-txt">Phone: {{ buis2.phone }}</p>
+        <p class="body-txt">Address: {{ buis2.address }}</p><br>
+        <h3 class="header-1">{{buis3.name}}</h3>
+        <p> Visit <a href="{{ buis3.website }}">{{ buis3.name }} </a></p>
+        <p class="body-txt">Phone: {{ buis3.phone }}</p>
+        <p class="body-txt">Address: {{ buis3.address }}</p><br>
     </div>
+    <figure>
+        <img class="profilePic" src="{{ image_file }}" alt="profilePic">
+    </figure>
 </div>
 
 <!-- Footer -->

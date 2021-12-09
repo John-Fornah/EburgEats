@@ -64,7 +64,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(25), unique=True, nullable=False)
     password = db.Column(db.String(25), nullable=False)
     email = db.Column(db.String(35), nullable=False)
-    
+    image_file = db.Column(db.String(20), nullable=False, default='placeholder.png')
     reviews = db.relationship('Review', backref='User', lazy=True)
 
     def __repr__(self): ##define how a user object is printed
