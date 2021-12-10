@@ -121,15 +121,15 @@
                             ACCOUNT</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">MOST
+                        <a href="{{ url_for('popular') }}" class="nav-link btn-style margin-right text-white">MOST
                             POPULAR</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">NEWEST
+                        <a href="{{ url_for('additions') }}" class="nav-link btn-style margin-right text-white">NEWEST
                             ADDITIONS</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">YOUR
+                        <a href="{{ url_for('favorite') }}" class="nav-link btn-style margin-right text-white">YOUR
                             FAVORITES</a>
                     </li>
                     <li class="nav-item">
@@ -153,37 +153,37 @@
     <div class="mostpopular">
         <h2 class="home-page-header text-nowrap" style="text-align: center; margin-top: 10px;">Most Popular</h2>
         <div class="restuarantList">
-            Restaurant 1.
+            <a href="{{ url_for('restaurantPage', buisness=buisnesses[0].name) }}" > {{ buisnesses[0].name }} </a>
         </div>
         <div class="restuarantList">
-            Restaurant 2.
+            <a href="{{ url_for('restaurantPage', buisness=buisnesses[1].name) }}" > {{ buisnesses[1].name }} </a>
         </div>
         <div class="restuarantList">
-            Restaurant 3.
+            <a href="{{ url_for('restaurantPage', buisness=buisnesses[2].name) }}" > {{ buisnesses[2].name }} </a>
         </div>
     </div>
     <div class="favorites">
         <h2 class="home-page-header text-nowrap" style="text-align: center; margin-top: 10px;">Favorites</h2>
         <div class="restuarantList">
-            Restaurant 1.
+            <a href="{{ url_for('restaurantPage', buisness=buisnesses[0].name) }}" > {{ buisnesses[0].name }} </a>
         </div>
         <div class="restuarantList">
-            Restaurant 2.
+            <a href="{{ url_for('restaurantPage', buisness=buisnesses[1].name) }}" > {{ buisnesses[1].name }} </a>
         </div>
         <div class="restuarantList">
-            Restaurant 3.
+            <a href="{{ url_for('restaurantPage', buisness=buisnesses[2].name) }}" > {{ buisnesses[2].name }} </a>
         </div>
     </div>
     <div class="newestadditions">
         <h2 class="home-page-header text-nowrap" style="text-align: center; margin-top: 10px;">Newest Additions</h2>
         <div class="restuarantList">
-            Restaurant 1.
+            <a href="{{ url_for('restaurantPage', buisness=buisnesses[0].name) }}" > {{ buisnesses[0].name }} </a>
         </div>
         <div class="restuarantList">
-            Restaurant 2.
+            <a href="{{ url_for('restaurantPage', buisness=buisnesses[1].name) }}" > {{ buisnesses[1].name }} </a>
         </div>
         <div class="restuarantList">
-            Restaurant 3.
+            <a href="{{ url_for('restaurantPage', buisness=buisnesses[2].name) }}" > {{ buisnesses[2].name }} </a>
         </div>
     </div>
 </div>

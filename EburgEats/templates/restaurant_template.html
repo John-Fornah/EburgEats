@@ -20,8 +20,8 @@
             rel="stylesheet">
     <!--icons-->
     <script src="https://kit.fontawesome.com/8ec657d8d9.js" crossorigin="anonymous"></script>
-    {% for restaurant in restaurants %}
-    <title> {{ restaurant.name }}</title>
+    <!--for restaurant in restaurants-->
+    <title> {{ buisness.name }}</title>
 </head>
 <body>
 <header>
@@ -55,15 +55,15 @@
                             ACCOUNT</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">MOST
+                        <a href="{{ url_for('popular') }}" class="nav-link btn-style margin-right text-white">MOST
                             POPULAR</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">NEWEST
+                        <a href="{{ url_for('additions') }}" class="nav-link btn-style margin-right text-white">NEWEST
                             ADDITIONS</a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('restaurantPage') }}" class="nav-link btn-style margin-right text-white">YOUR
+                        <a href="{{ url_for('favorite') }}" class="nav-link btn-style margin-right text-white">YOUR
                             FAVORITES</a>
                     </li>
                     <li class="nav-item">
@@ -94,12 +94,12 @@
             <div class="col-lg-8">
                 <!--RESTAURANT NAME-->
                 <div class="d-lg-flex restaurant-name-txt text-uppercase header-1">
-                    <h1>{{ restaurant.name }}</h1>
+                    <h1>{{ buisness.name }}</h1>
                 </div>
 
                 <!--RESTAURANT CUISINE--->
                 <div class="d-lg-flex restaurant-cuisine-txt body-txt text-uppercase">
-                    <h2>{{ restaurant.cuisine }}</h2>
+                    <h2>{{ buisness.genre }}</h2>
                 </div>
 
                 <!--RESTAURANT RATINGS-->
@@ -145,12 +145,12 @@
                     <text class="header-2">Restaurant Information</text>
 
                     <!--PHONE NUMBER-->
-                    <section><span class="restaurant-info body-txt margin-bottom">{{ restaurant.phone }}</span>
+                    <section><span class="restaurant-info body-txt margin-bottom">{{ buisness.phone }}</span>
                     </section>
 
                     <!--RESTAURANT WEBSITE -->
                     <section>
-                        <a class="restaurant-info body-txt" id="restaurant-web" href="{{restaurant.website}}">{{restaurant.website}}</a>
+                        <a class="restaurant-info body-txt" id="restaurant-web" href="{{buisness.website}}">{{buisness.website}}</a>
                     </section>
                 </div>
             </div>
@@ -280,7 +280,7 @@
                             <br>
                             <section class="location">
                                 <!--MAP-->
-                                <span class="body-txt">{{restaurant.location}}</span>
+                                <span class="body-txt">{{buisness.address}}</span>
                             </section>
 
                         </div>
@@ -326,7 +326,7 @@
     <br>
     <br>
 </section>
-{% endfor %}
+<!--endfor-->
 <!-- Footer -->
 <footer class="bg-dark text-center text-white">
     <!-- Grid container -->

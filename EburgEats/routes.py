@@ -1,8 +1,8 @@
 import secrets, os
 from flask import Flask, render_template, url_for, request, flash, redirect
 from EburgEats import app, db, bcrypt
-from EburgEats.forms import LoginForm, RegistrationForm, ReviewForm
-from EburgEats.models import User, Review, Buisness, Genre, BuisnessGenre, starRatings
+from EburgEats.forms import LoginForm, RegistrationForm, ReviewForm, UpdateAccountForm
+from EburgEats.models import User, Review, Buisness, starRatings
 from flask_login import login_user, current_user, logout_user
 
 #dummy data
@@ -36,14 +36,18 @@ hours = [
 ]
 # end of dummy post data
 
-@app.route("/")
+@app.route("/", methods=['GET','POST'])
 @app.route("/home")
 def home():
-    return render_template('home.html')
+    buisnesses = Buisness.query.all()
+    return render_template('home.html', buisnesses=buisnesses)
 
-@app.route("/restaurantPage")
+@app.route("/restaurantPage", methods=['GET','POST'])
 def restaurantPage():
-    return render_template('restaurant_template.html', posts = posts, restaurants=restaurants, hours=hours)
+    name = request.args['buisness']
+    buisness = Buisness.query.filter_by(name=name).first()
+    print(name)
+    return render_template('restaurant_template.html', posts = posts, buisness=buisness, hours=hours)
 
 @app.route("/photosPage")
 def photosPage():
@@ -149,12 +153,30 @@ def myreviews():
     image_file = url_for('static', filename='accountOverview/images/' + current_user.image_file)
     return render_template('myReviews.html',  user = current_user, image_file = image_file)
 
+
+@app.route("/popular", methods=['GET','POST'])
+def popular():
+    buisnesses = Buisness.query.all()
+    return render_template('mostpopular.html', buisnesses=buisnesses)
+
+@app.route("/newestAdditions")
+def additions():
+    buisnesses = Buisness.query.all()
+    return render_template('newestadditions.html', buisnesses=buisnesses)
+
 ##usally this is a button on the home page, will need to change how homepage looks after a user logs in
 @app.route("/logout")
 def logout():
     logout_user()
     return redirect(url_for('home'))
 
+@app.route("/favorite")
+def favorite():
+    if current_user.is_authenticated:
+        return redirect(url_for('favorites'))
+    else:
+        buisnesses = Buisness.query.all()
+        return render_template('yourfavorites.html', buisnesses=buisnesses)
 
 ##
 # Restaurants should use template for their page
